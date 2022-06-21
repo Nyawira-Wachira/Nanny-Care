@@ -11,59 +11,63 @@
 </script>
 <link href="/static/css/nannydetails.css" rel="stylesheet">
 
-{% for nannies in nanny %}
-<div class="bio">
-    <div class="row">
-        <div class="col">
 
-            <img src="{{nannies.profile_pic.url}}" class="card-img-top img-fluid" alt="{{nanny.name}}">
+<section class="nanny1">
+    {% for nannies in nanny %}
+    <div class="bio">
+        <div class="row">
+            <div class="col-4">
 
-        </div>
-        <div class="col">
-            <h1>{{nannies.name}}</h1>
-            <h3>{{nannies.experience}}</h3>
-            <h5>NANNY RATING</h5>
-            <span class="fa fa-star checked"></span>
-            <span class="fa fa-star checked"></span>
-            <span class="fa fa-star checked"></span>
-            <span class="fa fa-star checked"></span>
-            <span class="fa fa-star checked"></span>
-        </div>
-        <div class="col">
-            <h4>{{nannies.rates}}</h4>
-        </div>
-        <div class="col">
-            <h2>AVAILABILITY:</h2>
-            <h2>AGE:</h2>
-            <h2>LOCATION:</h2>
-            <h2>YEARS OF EXPERIENCE:</h2>
+                <img src="{{nannies.profile_pic.url}}" class="card-img-top img-fluid" alt="{{nanny.name}}">
+
+            </div>
+            <div class="col-2">
+                <h1>{{nannies.name}}</h1>
+                <h3>{{nannies.experience}}</h3>
+                <h5>NANNY RATING</h5>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+            </div>
+            <div class="col-1">
+                <h4>{{nannies.rates}}</h4>
+            </div>
+            <div class="col-5">
+                <h2>AVAILABILITY:{{nannies.availability}}</h2>
+                <h2>AGE:{{nannies.age}}</h2>
+                <h2>LOCATION:{{nannies.location}}</h2>
+                <h2>YEARS OF EXPERIENCE:{{nannies.experience}}</h2>
+            </div>
         </div>
     </div>
-</div>
-<hr>
-<div>
-    <div class="row">
-        <div class="col">
-            <h1>PROFILE</h1>
-        </div>
-        <div class="col">
-            <h1>ABOUT</h1>
-            <h3>Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae magni porro eos odit qui velit
-                itaque dolorem perferendis nostrum amet beatae, natus quia officia quaerat maiores suscipit nobis
-                eveniet aut.</h3><br>
+    <hr>
+    <div>
+        <div class="row">
+            <div class="col">
+                <h1>PROFILE</h1>
+            </div>
+            <div class="col">
+                <h1>ABOUT</h1>
+                <h3>Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae magni porro eos odit qui velit
+                    itaque dolorem perferendis nostrum amet beatae, natus quia officia quaerat maiores suscipit nobis
+                    eveniet aut.</h3><br>
 
-            <h1>SKILLS</h1>
-            <h3>Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae magni porro eos odit qui velit
-                itaque dolorem perferendis nostrum amet beatae, natus quia officia quaerat maiores suscipit nobis
-                eveniet aut.</h3>
-        </div>
-        <div class="col">
-            <h1 style="text-align: center;">SIMILAR PROFILES</h1>
-            <hr>
+                <h1>SKILLS</h1>
+                <h3>Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae magni porro eos odit qui velit
+                    itaque dolorem perferendis nostrum amet beatae, natus quia officia quaerat maiores suscipit nobis
+                    eveniet aut.</h3>
+            </div>
+            <div class="col">
+                <h1 style="text-align: center;">SIMILAR PROFILES</h1>
+                <hr>
+            </div>
         </div>
     </div>
-</div>
 
-{% endfor %}
+    {% endfor %}
+</section>
+
 
 {%endblock%}

@@ -9,6 +9,9 @@ class Nanny(models.Model):
     name = models.CharField(max_length=50, blank=True)
     experience = models.CharField(max_length=50, blank=True)
     rates = models.CharField(max_length=50, blank=True)
+    availability =  models.CharField(max_length=50, blank=True)
+    age =  models.CharField(max_length=50, blank=True)
+    location =  models.CharField(max_length=50, blank=True)
 
     def save_profile(self):
         self.save()

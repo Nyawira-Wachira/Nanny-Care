@@ -11,34 +11,36 @@
 </script>
 <link href="/static/css/nannydetails.css" rel="stylesheet">
 
-
+{% for nannies in nanny %}
 <section class="nanny1">
-    {% for nannies in nanny %}
-    <div class="bio">
+
+    <div class="bio" style="margin-bottom:30px;">
         <div class="row">
             <div class="col-4">
 
-                <img src="{{nannies.profile_pic.url}}" class="card-img-top img-fluid" alt="{{nanny.name}}">
+                <img src="{{nannies.profile_pic.url}}" class="card-img-top img-fluid" alt="{{nannies.name}}"
+                    style="padding-right: 10px;">
+
 
             </div>
             <div class="col-2">
-                <h1>{{nannies.name}}</h1>
-                <h3>{{nannies.experience}}</h3>
-                <h5>NANNY RATING</h5>
+                <h1 style="margin-bottom:15px; text-align: justify;">{{nannies.name}}</h1>
+                <h3 style="margin-bottom:15px; text-align: justify;">{{nannies.experience}}</h3>
+                <h5 style="margin-bottom:15px; text-align: justify;">NANNY RATING</h5>
                 <span class="fa fa-star checked"></span>
                 <span class="fa fa-star checked"></span>
                 <span class="fa fa-star checked"></span>
                 <span class="fa fa-star checked"></span>
                 <span class="fa fa-star checked"></span>
             </div>
-            <div class="col-1">
+            <div class="col-2">
                 <h4>{{nannies.rates}}</h4>
             </div>
-            <div class="col-5">
-                <h2>AVAILABILITY:{{nannies.availability}}</h2>
-                <h2>AGE:{{nannies.age}}</h2>
-                <h2>LOCATION:{{nannies.location}}</h2>
-                <h2>YEARS OF EXPERIENCE:{{nannies.experience}}</h2>
+            <div class="col-4">
+                <h2 style="margin-bottom:15px; text-align: justify;">AVAILABILITY: {{nannies.availability}}</h2>
+                <h2 style="margin-bottom:15px; text-align: justify;">AGE: {{nannies.age}}</h2>
+                <h2 style="margin-bottom:15px; text-align: justify;">LOCATION: {{nannies.location}}</h2>
+                <h2 style="margin-bottom:15px; text-align: justify;">YEARS OF EXPERIENCE: {{nannies.experience}}</h2>
             </div>
         </div>
     </div>
@@ -48,16 +50,12 @@
             <div class="col">
                 <h1>PROFILE</h1>
             </div>
-            <div class="col">
-                <h1>ABOUT</h1>
-                <h3>Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae magni porro eos odit qui velit
-                    itaque dolorem perferendis nostrum amet beatae, natus quia officia quaerat maiores suscipit nobis
-                    eveniet aut.</h3><br>
+            <div class="col" class="about1">
+                <h1 style="margin-bottom:20px;">ABOUT</h1>
+                <h3>{{nannies.about}}</h3><br>
 
-                <h1>SKILLS</h1>
-                <h3>Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae magni porro eos odit qui velit
-                    itaque dolorem perferendis nostrum amet beatae, natus quia officia quaerat maiores suscipit nobis
-                    eveniet aut.</h3>
+                <h1 style="margin-bottom:20px;">SKILLS</h1>
+                <h3>{{nannies.about}}</h3>
             </div>
             <div class="col">
                 <h1 style="text-align: center;">SIMILAR PROFILES</h1>
@@ -66,8 +64,7 @@
         </div>
     </div>
 
-    {% endfor %}
 </section>
-
+{% endfor %}
 
 {%endblock%}

@@ -12,6 +12,8 @@ class Nanny(models.Model):
     availability =  models.CharField(max_length=50, blank=True)
     age =  models.CharField(max_length=50, blank=True)
     location =  models.CharField(max_length=50, blank=True)
+    about = models.TextField(default="Some String")
+    skills = models.TextField(default="Some String")
 
     def save_profile(self):
         self.save()

@@ -1,0 +1,4 @@
+make: Entering directory '/home/folio/Documents/Moringa-school-projects/Django/Nanny-Care'
+python3 manage.py runserver
+make: Leaving directory '/home/folio/Documents/Moringa-school-projects/Django/Nanny-Care'
+ 

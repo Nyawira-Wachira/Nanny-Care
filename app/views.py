@@ -8,6 +8,10 @@ from django.http import HttpResponse
 from .models import User, Nanny, Bio, UserProfile
 
 # Create your views here.
+def Index(request):
+
+
+    return render(request, 'index.html')
 
 
 def home(request):

@@ -6,6 +6,7 @@ __pycache__/
 .vscode/
 .idea/
 __pycache__/
+virtual/
 
 .env
 virtual/

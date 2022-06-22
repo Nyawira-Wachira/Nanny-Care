@@ -16,12 +16,79 @@
 <link href="/static/css/styles.css" rel="stylesheet">
 
 <title>Company details</title>
-<h3 class="text-center"><u><b> Nanny Care </b></u></h3>
-<p class="text-center">Do you need a nanny?</p>
-<P class="text-center">In a couple of minutes you can have one</P>
+
 </head>
 <body>
-<div class="d-grid gap-2 col-6 mx-auto">
+    <h3 class="text-center"><u><b> Nanny Care </b></u></h3>
+    <p class="text-center">Do you need a nanny?</p>
+    <P class="text-center">In a couple of minutes you can have one</P>
+    {% for image in gallery %}
+<div class="container">
+  <div class="row">
+    <div class="col-md-8">
+      <div class="card mb-4 shadow-sm" style="width:20rem;height:23rem;">
+        <div class="card-header">{{image.name}}</div>
+        <div class="card-body">
+          <img class="card-img-top" src="{{ image.photo.url }}" data-toggle="modal" data-target="#myModal{{image.id}}"
+            style="height:150px;" />
+          <br>
+          <p class="card-text">{{image.summary}}</p>
+          <div class="d-flex justify-content-between align-items-center">
+            <div class="btn-group">
+              <button type="button" class="btn btn-sm btn-outline-secondary" data-toggle="modal"
+                data-target="#myModal{{image.id}}" style="padding-right:10px;">View</button>
+            </div>
+            <small class="text-muted">Location : {{image.location}}</small>
+            <small class="text-muted">Category : {{image.category}}</small>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!--Modal-->
+<div class="modal fade" id="myModal{{image.id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="#{{image.name}}">{{image.name}}</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div>
+        <img src="{{ image.photo.url }}" class="img-fluid" alt="{{image.name}}" style="height:300px; width: 400px;" />
+      </div>
+      <div class="modal-body">{{image.description}}</div>
+      <div class="modal-body">Category: {{image.category}}</div>
+      <div class="modal-body">Location:{{image.location}}</div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-info"
+          value="{{ image.photo.url }}" onclick="copyURL(this.value)">Copy
+          URL</button>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+<script>
+  function copyURL(value) {
+    function handler(event) {
+      event.clipboardData.setData('text/plain', value);
+      event.preventDefault();
+      document.removeEventListener('copy', handler, true);
+    }
+    document.addEventListener('copy', handler, true);
+    document.execCommand('copy');
+  }
+</script>
+{% empty %}
+<h3>The gallery is still empty!</h3>
+{% endfor %}
+</div>
+
+<!-- <div class="d-grid gap-2 col-6 mx-auto">
 <button class="btn btn-primary" type="button">select a nanny</button>
 <button class="btn btn-primary" type="button">Enter location</button>
 <button class="btn btn-primary" type="button">Experience (Y)(M)</button>
@@ -56,7 +123,7 @@
 <p class="card-text">She is talented and loves children</p>
 <a href="#" class="btn btn-primary">Book</a>
 </div>
-</div>
+</div> -->
 <!-- <links> -->
 <div class="container">
 <div class="row">

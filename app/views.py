@@ -52,13 +52,14 @@ def booking(request):
     return render(request, 'book/booking.html', params)
 
 
-@login_required(login_url='/accounts/login/')
-def welcome(request):
+def details(request):
+    
     nanny = Nanny.objects.all()
     return render(request, 'nannydetails/nannydetails.html', {'nanny':nanny})
 
 
 @login_required(login_url='/accounts/login/')
 def companydetails(request):
-    
-    return render (request, 'companydetails/company_detail.html')
+    gallery = Nanny.objects.all() [:8]
+
+    return render (request, 'companydetails/company_detail.html',{'gallery':gallery})

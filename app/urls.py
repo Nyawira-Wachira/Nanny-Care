@@ -8,7 +8,7 @@ urlpatterns = [
     path('',views.Index, name='index'),
     path('profile/<str:username>/', views.profile, name='profile'),
     path('booking/', views.booking, name='booking'),
-    path('nannies/', views.welcome, name='welcome'),
+    path('nannies/', views.details, name='welcome'),
     path('home/', views.home, name='home'),
     path('companydetails/', views.companydetails, name='companydetails'),
 ]

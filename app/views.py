@@ -33,7 +33,7 @@ def booking(request):
     return render(request, 'book/booking.html')
 
 
-def welcome(request):
+def details(request):
 
     nanny = Nanny.objects.all()
     return render(request, 'nannydetails/nannydetails.html', {'nanny':nanny})

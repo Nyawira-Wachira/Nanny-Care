@@ -1,0 +1,15 @@
+#movetxt {
+  -webkit-animation: moving 5s infinite;
+  animation: moving 5s infinite;
+}
+@keyframes moving {
+  from {transform: translateY(0px);}
+  to {transform: translateY(200px);}
+}
+#navcolor{
+  background-color: #ffc8dd;
+}
+.nav-link{
+  /* background-color: green !important; */
+  color:black;
+}

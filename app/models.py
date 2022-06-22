@@ -2,6 +2,24 @@ from django.db import models
 # Create your models here.
 
 
+class Location(models.Model):
+    name = models.CharField(max_length=100, unique=True)
+    # slug = models.SlugField(max_length=100, null=TRUE, unique=True)
+
+    # save location to database
+    def save_location(self):
+        self.save()
+
+    # update location
+    def update_location(self, name):
+        self.name = name
+        self.save()
+
+     # delete location from database
+    def delete_location(self):
+        self.delete()
+
+
 class Company(models.Model):
     name = models.CharField(max_length=255)
     description = models.TextField()

@@ -1,0 +1,85 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load bootstrap4 %}
+{% block content%}
+{{block.super}}
+<div class="container-fluid  text-center"id="images">
+    <h1 class="font-weight-bold text-center  intro" >See Details of the companies available</h1>
+    <div class="section-two-container">
+      <div class="section-2-card-1">
+        <div class="sec-2-nannies-card1">
+          <img src="{% static './images/nannies1.jpg' %}">
+          <ul>
+            <li>Name: Sashley Nanny Agency</li>
+            <li>Email: sashleynanny@gmail.com</li>
+            <li>Location:Nairobi</li>
+            <li>Phone:0745636636</li>
+            <li>Rating:&star;&star;&star;</li>
+          </ul>
+          <button><a href="#">See Nannies</a></button>
+        </div>
+        <div class="sec-2-nannies-card2">
+          <img src="{% static './images/nannies2.jpg' %}">
+          <ul>
+            <li>Name: Max Child Care Limited</li>
+            <li>Email: maxcare@gmail.com</li>
+            <li>Location:Mombasa</li>
+            <li>Phone:0745373653</li>
+            <li>Rating:&star;&star;&star;&star;&star;</li>
+          </ul>
+          <button><a href="#">See Nannies</a></button>
+        </div>
+      </div>
+      <div class="section-2-card-2">
+        <img src="{% static './images/nannies3.jpg' %}">
+        <ul>
+          <li>Name: Nanny Baby Day Care</li>
+          <li>Email: nannybabycare@gmail.com</li>
+          <li>Location:Nakuru</li>
+          <li>Phone:0726968810</li>
+          <li>Rating:  &star;&star;&star; </li>
+        </ul>
+        <button><a href="#"> See Nannies</a></button>
+      </div>
+    </div>
+    <!-- SECOND PIC STARTS HERE -->
+    <div class="section-two-container" id="second1">
+      <div class="section-2-card-1">
+        <div class="sec-2-nannies-card1">
+          <img src="{% static './images/nannies4.jpg' %}">
+          <ul>
+            <li>Name: Nanny House services</li>
+            <li>Email: nannyhouse@gmail.com</li>
+            <li>Location:Nairobi</li>
+            <li>Phone:0724367802</li>
+            <li>Rating:&star;&star;&star;&star;</li>
+          </ul>
+          <button><a href="#">See Nannies</a></button>
+        </div>
+        <div class="sec-2-nannies-card2">
+          <img src="{% static './images/nannies5.jpg' %}">
+          <ul>
+            <li>Name: Nanny Place</li>
+            <li>Email: nannyplace@gmail.com</li>
+            <li>Location:Mombasa</li>
+            <li>Phone:0748436397</li>
+            <li>Rating:&star;&star;</li>
+          </ul>
+          <button><a href="#">See Nannies</a></button>
+        </div>
+      </div>
+      <div class="section-2-card-2">
+        <img src="{% static './images/nannies6.jpg' %}">
+        <ul>
+          <li>Name: wiz nanny agency</li>
+          <li>Email: wiznanny@gmail.com</li>
+          <li>Location:Kisumu</li>
+          <li>Phone:0789688130</li>
+          <li>Rating:&star;&star;&star;&star;&star;</li>
+        </ul>
+        <button><a href="#"> See Nannies</a></button>
+      </div>
+    </div>
+</div>
+
+{%endblock%}

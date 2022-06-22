@@ -1,0 +1,76 @@
+{% extends 'base.html' %}
+{% load bootstrap4 %}
+
+{% block content %}
+{{block.super}}
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous">
+</script>
+<link href="/static/css/nannydetails.css" rel="stylesheet">
+
+{% for nannies in nanny %}
+<section class="nanny1">
+
+    <div class="bio" style="margin-bottom:30px;">
+        <div class="row">
+            <div class="col-4">
+
+                <img src="{{nannies.profile_pic.url}}" class="card-img-top img-fluid" alt="{{nannies.name}}"
+                    style="padding-right: 10px; height: 250px;">
+
+
+            </div>
+            <div class="col-2">
+                <h1 style="margin-bottom:15px; text-align: justify;">{{nannies.name}}</h1>
+                <h3 style="margin-bottom:15px; text-align: justify;">{{nannies.experience}}</h3>
+                <h5 style="margin-bottom:15px; text-align: justify;">NANNY RATING</h5>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+            </div>
+            <div class="col-2">
+                <h4>{{nannies.rates}}</h4>
+            </div>
+            <div class="col-4">
+                <h2 style="margin-bottom:15px; text-align: justify;">AVAILABILITY: {{nannies.availability}}</h2>
+                <h2 style="margin-bottom:15px; text-align: justify;">AGE: {{nannies.age}}</h2>
+                <h2 style="margin-bottom:15px; text-align: justify;">LOCATION: {{nannies.location}}</h2>
+                <h2 style="margin-bottom:15px; text-align: justify;">YEARS OF EXPERIENCE: {{nannies.experience}}</h2>
+            </div>
+        </div>
+    </div>
+    <!-- <hr style="height:2px; border-width:0; color:#BDE0FE; background-color:#BDE0FE; "> -->
+    <div>
+        <div class=" row">
+            <div class="col">
+                <h1>PROFILE</h1>
+            </div>
+            <div class="col" class="about1">
+                <h1 style="padding-right: 10px;">ABOUT</h1>
+                <hr
+                    style="margin-bottom:20px; height:2px; width: 25%; border-width:0; color:black; background-color:black;">
+                <h3 style="padding-right: 10px;">{{nannies.about}}</h3><br>
+
+                <h1 style="padding-right: 10px;">SKILLS</h1>
+                <hr
+                    style=" margin-bottom:20px; height:2px; width: 25%; border-width:0; color:black; background-color:black">
+                <h3 style="padding-right: 10px;">{{nannies.skills}}</h3>
+            </div>
+            <div class="col">
+                <h1 style="text-align: center;">SIMILAR PROFILES</h1>
+                <hr
+                    style="height:2px; width: 50%; border-width:0; color:black; background-color:black; margin-left:25% !important; margin-right:25% !important;">
+            </div>
+        </div>
+    </div>
+
+</section>
+<hr style="height:10px; color:#BDE0FE; background-color:#BDE0FE; ">
+{% endfor %}
+
+{%endblock%}

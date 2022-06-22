@@ -31,5 +31,4 @@ def booking(request):
 
 def welcome(request):
     nanny = Nanny.objects.all()
-    return render(request, 'nannydetails.html', {'nanny':nanny})
-
+    return render(request, 'nannydetails/nannydetails.html', {'nanny':nanny})

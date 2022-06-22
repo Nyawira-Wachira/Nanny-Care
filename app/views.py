@@ -30,7 +30,11 @@ def profile(request, username):
 
 @login_required(login_url='/accounts/login/')
 def booking(request):
-    return render(request, 'book/booking.html')
+    # selected_nanny = Nanny.objects.get(id=request.nanny_id)
+    selected_nanny = Nanny.objects.all()[0]
+    params = {'nanny': selected_nanny}
+    
+    return render(request, 'book/booking.html', params)
 
 
 def welcome(request):

@@ -142,8 +142,8 @@ MEDIA_URL = '/media/'
 MEDIA_ROOR =os.path.join( BASE_DIR, 'media')
 
 
-LOGIN_REDIRECT_URL='/'
-LOGOUT_REDIRECT_URL ='accounts:login'
+LOGIN_REDIRECT_URL='home'
+LOGOUT_REDIRECT_URL ='/'
 
 
 # Default primary key field type

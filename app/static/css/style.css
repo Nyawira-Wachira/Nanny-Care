@@ -1,0 +1,104 @@
+#movetxt {
+  -webkit-animation: moving 5s infinite;
+  animation: moving 5s infinite;
+}
+@keyframes moving {
+  from {transform: translateY(0px);}
+  to {transform: translateY(200px);}
+}
+@media all and (max-width: 960px) {
+  .section-two-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+  .section-one {
+    margin: 1rem;
+    text-align: center;
+    width: 10%;
+  }
+  .section-2-card-1 {
+    display: flex;
+    flex-direction: column;
+  }
+  .sec-2-nannies-card1,
+  .sec-2-nannies-card2,
+  .section-2-card-2 {
+    margin: 20px auto;
+    border-bottom: rgb(150, 147, 147) 1px solid;
+    padding-bottom: 10px;
+  }
+  .section-two-container ul {
+    margin-top: 5px;
+  }
+
+}
+#navcolor{
+  background-color: #ffc8dd;
+}
+.nav-link{
+  /* background-color: green !important; */
+  color:green;
+}
+.intro{
+  padding: 20px;
+  
+}
+.section-one {
+  margin: 4rem 0;
+  text-align: center;
+  width: 100%;
+}
+/* section one ends here  */
+
+.section-two-container {
+  display: flex;
+  justify-content: space-around;
+  max-width: 1000px;
+  margin: auto;
+}
+.section-two-container ul {
+  margin-top: 15px;
+}
+.section-two-container ul li {
+  list-style-type: none;
+  line-height: 1.5rem;
+  font-weight: bold;
+}
+.section-two-container img {
+  width: 250px;
+  height: 120px;
+  border-radius: 7px;
+}
+.section-2-card-1 {
+  display: flex;
+  justify-content: space-between;
+}
+.sec-2-nannies-card1 {
+  padding-right: 20px;
+}
+/* designing the button  */
+.section-two-container button {
+  background-color: rgb(255, 159, 175);
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  margin-top: 10px;
+  padding: 10px 20px;
+}
+.section-two-container button:hover {
+  background-color: rgb(153, 153, 82);
+  cursor: pointer;
+}
+.section-two-container button a {
+  color: #333;
+  text-decoration: none;
+}
+#second1{
+  margin-top: 2.4rem ;
+  margin-bottom: 2.4rem ;
+}
+
+body {
+  background-color: #f9f3f5;
+}

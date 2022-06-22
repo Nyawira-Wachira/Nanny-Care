@@ -1,0 +1,184 @@
+{% extends 'companydetails/base.html' %}
+{% load bootstrap4 %}
+
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous">
+</script>
+<link href="/static/css/styles.css" rel="stylesheet">
+
+<title>Company details</title>
+
+</head>
+<body>
+    <h3 class="text-center"><u><b> Nanny Care </b></u></h3>
+    <p class="text-center">Do you need a nanny?</p>
+    <P class="text-center">In a couple of minutes you can have one</P>
+    {% for image in gallery %}
+<div class="container">
+  <div class="row">
+    <div class="col-md-8">
+      <div class="card mb-4 shadow-sm" style="width:20rem;height:23rem;">
+        <div class="card-header">{{image.name}}</div>
+        <div class="card-body">
+          <img class="card-img-top" src="{{ image.photo.url }}" data-toggle="modal" data-target="#myModal{{image.id}}"
+            style="height:150px;" />
+          <br>
+          <p class="card-text">{{image.summary}}</p>
+          <div class="d-flex justify-content-between align-items-center">
+            <div class="btn-group">
+              <button type="button" class="btn btn-sm btn-outline-secondary" data-toggle="modal"
+                data-target="#myModal{{image.id}}" style="padding-right:10px;">View</button>
+            </div>
+            <small class="text-muted">Location : {{image.location}}</small>
+            <small class="text-muted">Category : {{image.category}}</small>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!--Modal-->
+<div class="modal fade" id="myModal{{image.id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="#{{image.name}}">{{image.name}}</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div>
+        <img src="{{ image.photo.url }}" class="img-fluid" alt="{{image.name}}" style="height:300px; width: 400px;" />
+      </div>
+      <div class="modal-body">{{image.description}}</div>
+      <div class="modal-body">Category: {{image.category}}</div>
+      <div class="modal-body">Location:{{image.location}}</div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-info"
+          value="{{ image.photo.url }}" onclick="copyURL(this.value)">Copy
+          URL</button>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+<script>
+  function copyURL(value) {
+    function handler(event) {
+      event.clipboardData.setData('text/plain', value);
+      event.preventDefault();
+      document.removeEventListener('copy', handler, true);
+    }
+    document.addEventListener('copy', handler, true);
+    document.execCommand('copy');
+  }
+</script>
+{% empty %}
+<h3>The gallery is still empty!</h3>
+{% endfor %}
+</div>
+
+<!-- <div class="d-grid gap-2 col-6 mx-auto">
+<button class="btn btn-primary" type="button">select a nanny</button>
+<button class="btn btn-primary" type="button">Enter location</button>
+<button class="btn btn-primary" type="button">Experience (Y)(M)</button>
+</div>
+<img src="/static/img/nanny1.webp" class="card-img-top" alt="...">
+<div class="card-body">
+<h5 class="card-title">Nanny</h5>
+<p><strong>Name: </strong> Regina</p>
+<p><strong>Age: </strong> 28</p>
+<p> <strong>Location: </strong> Malindi </p>
+<p> <strong>Available: </strong> True </p>
+<p class="card-text">Hard working panctual and iteligent,Can multitask on various activities.</p>
+<a href="#" class="btn btn-primary">Book</a>
+</div>
+<img src="/static/img/nanny2.jpeg" class="card-img-top" alt="...">
+<div class="card-body">
+<h5 class="card-title">Nanny</h5>
+<p><strong>Name: </strong> Anne</p>
+<p><strong>Age: </strong> 24</p>
+<p> <strong>Location: </strong> Kiambu </p>
+<p> <strong>Available: </strong> True </p>
+<p class="card-text">Can be trusted and knows how to handle children,can also participate in extra-activities</p>
+<a href="#" class="btn btn-primary">Book</a>
+</div>
+<img src="/static/img/nanny3.jpg" class="card-img-top" alt="...">
+<div class="card-body">
+<h5 class="card-title">Nanny</h5>
+<p><strong>Name: </strong> Grace</p>
+<p><strong>Age: </strong> 29</p>
+<p> <strong>Location: </strong> Kilifi </p>
+<p> <strong>Available: </strong> True </p>
+<p class="card-text">She is talented and loves children</p>
+<a href="#" class="btn btn-primary">Book</a>
+</div>
+</div> -->
+<!-- <links> -->
+<div class="container">
+<div class="row">
+    <div class="col-lg-8 col-md-10 mx-auto">
+        <ul class="list-inline text-center">
+            <li class="list-inline-item">
+                <a href="https://www.facebook.com/NannyCare/" target="_blank">
+                    <span class="fa-stack fa-lg">
+                        <i class="fas fa-circle fa-stack-2x"></i>
+                        <i class="fab fa-instagram fa-stack-1x fa-inverse"></i>
+                    </span>
+                </a>
+            </li>
+            <li class="list-inline-item">
+                <a href="https://www.pinterest.com/NannyCare/" target="_blank">
+                    <span class="fa-stack fa-lg">
+                        <i class="fas fa-circle fa-stack-2x"></i>
+                        <i class="fab fa-instagram fa-stack-1x fa-inverse"></i>
+                    </span>
+                </a>
+            </li>
+            <li class="list-inline-item">
+                <a href="https://mobile.linkedIn.com/NannyCare" target="_blank">
+                    <span class="fa-stack fa-lg">
+                        <i class="fas fa-circle fa-stack-2x"></i>
+                        <i class="fab fa-twitter fa-stack-1x fa-inverse"></i>
+                    </span>
+                </a>
+            </li>
+            <li class="list-inline-item">
+                <a href="https://www.twitter.com/NannyCare/" target="_blank">
+                    <span class="fa-stack fa-lg">
+                        <i class="fas fa-circle fa-stack-2x"></i>
+                        <i class="fab fa-instagram fa-stack-1x fa-inverse"></i>
+                    </span>
+                </a>
+            </li>
+            <li class="list-inline-item">
+                <a href="https://instagram.com/NannyCare" target="_blank">
+                    <span class="fa-stack fa-lg">
+                        <i class="fas fa-circle fa-stack-2x"></i>
+                        <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+                    </span>
+                </a>
+            </li>
+        </ul>
+        <P class="contact text-center">Contact us on</P>
+        <P class="no text-center">012345678/09876543</P>
+        <p class="copyright text-center">Copyright &copy; Nanny Care</p>
+    </div>
+</div>
+</div>
+<!-- </links> -->
+    </div>
+
+</body>
+</html>
+{%endblock%}

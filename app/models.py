@@ -20,9 +20,9 @@ class Nanny(models.Model):
         upload_to='profilepic/', default='default.jpeg')
     name = models.CharField(max_length=50, blank=True)
     experience = models.CharField(max_length=50, blank=True)
-    rates = models.CharField(max_length=50, blank=True)
-    availability =  models.CharField(max_length=50, blank=True)
-    age =  models.CharField(max_length=50, blank=True)
+    rates = models.IntegerField(blank=True)
+    availability =  models.BooleanField(max_length=50, blank=True)
+    age =  models.IntegerField(blank=True)
     location =  models.CharField(max_length=50, blank=True)
     about = models.TextField(default="Some String")
     skills = models.TextField(default="Some String")
@@ -32,6 +32,10 @@ class Nanny(models.Model):
 
     def __str__(self):
         return self.name
+
+    def get_image_by_id(cls):
+        images = cls.objects.get(pk=id)
+        return images
 
 
 class Bio(models.Model):

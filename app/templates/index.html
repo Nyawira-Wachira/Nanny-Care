@@ -22,7 +22,15 @@
 </head>
 
 <body>
-  <nav class="navbar navbar-expand-lg" style="background:pink;">
+  <!-- <style>
+    body {
+      background-image: url("/static/img/nc.jpg");
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      background-size: cover;
+    }
+    </style> -->
+  <nav class="navbar navbar-expand-lg" id="nav" style="background:#FFC8DD;">
     <div class="container-fluid">
       <a class="navbar-brand" href="#">Nanny-Care</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
@@ -30,8 +38,8 @@
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="topnav-right">
-        <a href="" style="margin-right:15px">Login </a>
-        <a href="">Sign-Up</a>
+        <a href="/accounts/login" style="margin-right:15px"><button type="button" class="btn btn-outline-info btn-sm">Login </button></a>
+        <a href="/accounts/register/"><button type="button" class="btn btn-outline-info btn-sm">Sign-Up</button></a>
       </div>
     </div>
   </nav>
@@ -40,8 +48,8 @@
       <div class="col-md-6 my-3">
         <h1 style="margin-top:50px;">NANNY CARE</h1>
         <h1>Stepping in, when you need to step out.</h3><br>
-          <button type="button" class="btn btn-outline-primary btn-sm">Full time</button> or
-          <button type="button" class="btn btn-outline-info btn-sm">Part time</button> Nanny Services
+          <a href="{% url 'booking' %}"><button type="button" class="btn btn-outline-dark">Full time</button></a> or
+          <a href="{% url 'booking' %}"><button type="button" class="btn btn-outline-dark">Part time</button></a> Nanny Services
       </div>
       <div class="col-md-6 my-3">
         <img
@@ -117,18 +125,15 @@
         </div>
       </div>
     </div>
+
   </div><br><br>
-
-  <footer style="background:pink;">
+  <footer style="background:#FFC8DD">
     <p>Email : Nannycare@gmail.com</p>
-    <p>Nannycare @2022</p>
     <p>Contacts:0712345678</p>
-
+    <font-awesome-icon icon="fa-brands fa-facebook" />
+    <p align="center" style="margin-bottom:4px; font-family: Satisfy, cursive; font-size:25px;">Nannycare @2022</p>
+  
   </footer>
-
-
-
-
 
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
     integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous">

@@ -1,0 +1,21 @@
+body {}
+
+.bio {
+    color: #FFAFCC;
+}
+
+.col {
+    padding: 0;
+}
+
+.nanny1 {
+    padding-top: 30px;
+    padding-bottom: 30px;
+    padding-left: 30px;
+    padding-right: 30px;
+
+}
+
+.about1 {
+    background-color: #BDE0FE;
+}

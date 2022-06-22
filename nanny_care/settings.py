@@ -91,9 +91,9 @@ WSGI_APPLICATION = 'nanny_care.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'nanny_care',
-        'USER': 'moringa',
-        'PASSWORD': 'tribs',
+        'NAME': 'nannycare',
+        'USER': 'mary',
+        'PASSWORD': 'mary',
         'HOST': '127.0.0.1',
         'PORT': '',
     }

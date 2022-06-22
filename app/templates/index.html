@@ -4,27 +4,111 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    {% if title %}
-    <title>Nanny-Care - {{name}}</title>
-    {% else %}
+    
       <title>Nanny-Care </title>
-    {% endif %}
-
-    {% block styles %}
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <link href="https://fonts.googleapis.com/css2?family=Oleo+Script+Swash+Caps&family=Satisfy&display=swap" rel="stylesheet">
-     
-  {% endblock %}
   
+
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Oleo+Script+Swash+Caps&family=Satisfy&display=swap" rel="stylesheet">   
+</style> 
 </head>
 <body>
-  
+    <nav class="navbar navbar-expand-lg" style="background:pink;">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">Nanny-Care</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="topnav-right">
+            <a href="" style="margin-right:15px">Login </a>
+            <a href="">Sign-Up</a>
+          </div>
+        </div>
+      </nav>
+      <div class="container">
+        <div class="row">
+            <div class="col-md-6 my-3">
+                <h1 style="margin-top:50px;">NANNY CARE</h1>
+                <h1>Stepping in, when you need to step out.</h3><br>
+                <button type="button" class="btn btn-outline-primary btn-sm">Full time</button> or
+                <button type="button" class="btn btn-outline-info btn-sm">Part time</button> Nanny Services
+            </div>
+            <div class="col-md-6 my-3">
+                <img src="https://media.istockphoto.com/photos/affectionate-african-mother-constructing-building-with-cubes-with-picture-id1271954653?k=20&m=1271954653&s=612x612&w=0&h=OFGsKG_uTFKvWPyA5dcHHwdD7ShWWY_9ghmZx1XMkIE=" class="img-fluid" alt="...">
 
-    
+            </div>
+        </div><br>
+            <div class="row mt-4">
+                <h1 align="center">About</h1><br><br>
+                <div class="col-md-6 my-3">
+                    <img src="https://media.istockphoto.com/photos/african-mother-with-little-kid-son-play-with-wooden-blocks-picture-id1158481687?k=20&m=1158481687&s=612x612&w=0&h=vlJZC8vets2uoH3NgeHAkSOTpBGOdqLb33rjjXop5u8=" class="img-fluid" alt="...">
+                </div>
+                <div class="col-md-6 my-3">
+                    <p  style="margin-top:50px;">Nanny Care connects you with the help that you need.We source nannies from reputable nanny companies that have assessed and approved their credibility.
+                        We are basically the bridging gap between families who are in need of 
+                        nanny services and capable nannies who are in need of employment. 
+                        Take a quick look at some of our services below.</p>
+                </div>
+              </div>
+            <div class="row my-5">
+                <h2 align="center">Services</h2>
+              <div class="col-md-6">
+                <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+                  <div class="carousel-inner">
+                    <div class="carousel-item active">
+                      <img src="https://media.istockphoto.com/photos/affectionate-millennial-biracial-mom-carrying-on-hands-funny-kid-picture-id1271954663?k=20&m=1271954663&s=612x612&w=0&h=vuhVyhxRfwWcU7REcTqmrDxd2hW4SzUz7PeBMNP5R8w=" class="d-block w-100" alt="...">
+                    </div>
+                    <div class="carousel-item">
+                      <img src="https://media.istockphoto.com/photos/hispanic-young-adult-woman-babysitting-child-and-helping-with-picture-id1057339834?k=20&m=1057339834&s=612x612&w=0&h=qRvzEu_podcN9SorFpfeMNsC4Y5L5jmnGSc39SZSAVM=" class="d-block w-100" alt="...">
+                    </div>
+                    <div class="carousel-item">
+                      <img src="https://media.istockphoto.com/photos/connected-african-american-woman-baby-sitter-get-acquainted-with-picture-id1247962696?k=20&m=1247962696&s=612x612&w=0&h=PhB3DKnqAYRVFREMkFvmHx-howP6smIl9XZ_FDStFIg=" class="d-block w-100" alt="...">
+                    </div>
+                  </div>
+                  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                  </button>
+                  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                  </button>
+                </div>
+              </div>
+              <div class="col-md-6">
+              <br><div class="card">
+                <div class="card-body">
+                  <p>You can view available nannies from a variety of nanny companies.</p>
+                </div>
+              </div><br><br>
+              <div class="card">
+                <div class="card-body">
+                  <p>You can select your preferred nanny from your preferred company.</p>
+                </div>
+              </div><br><br>
+              <div class="card">
+                <div class="card-body">
+                  <p>You can vet the selected nanny and then come up with terms of payment.</p>
+                </div>
+              </div>
+            </div>
+            </div>
+            </div><br><br>
+     
+    <footer style="background:pink;">
+      <p>Email : Nannycare@gmail.com</p>
+      <p>Nannycare @2022</p>
+      <p>Contacts:0712345678</p>
 
-      {% block scripts %}
+    </footer>
+
+      
+           
+
+
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>  
-    {% endblock %}  
+  
 </body>
 </html>

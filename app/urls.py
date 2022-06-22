@@ -1,4 +1,3 @@
-
 from django.urls.conf import path
 from . import views
 from django.conf import settings
@@ -10,6 +9,7 @@ urlpatterns = [
     path('booking/', views.booking, name='booking'),
     path('nannies/', views.welcome, name='welcome'),
     path('home/', views.home, name='home'),
+    path('companydetails/', views.companydetails, name='companydetails'),
 ]
 
 if settings.DEBUG:

@@ -7,11 +7,18 @@
             <div class="col-md col-lg col-md-12 card">
                 <!-- user profile details -->
                 <h3 class="fw-5">My Profile</h3>
-                profile pic here <p>
+                <p>profile pic here</p>
+                <p>
                     <strong>Username: </strong>{{user.username}} <br>
                     <strong>Email: </strong>{{user.email}}
                 </p>
-
+                <div>
+                    <p><a href="" class="btn btn-sm btn-secondary" id="update-btn">Update Profile</a>
+                    </p>
+                    <div class="update-form" style="display:none;">
+                        Updating Profile form will be appended here
+                    </div>
+                </div>
             </div>
             <div class="col-md col-lg col-md-12 card ml-3">
                 <!-- for loop to hold previously booked nannies -->

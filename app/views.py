@@ -5,11 +5,6 @@ from django.contrib.auth.decorators import login_required
 from .models import User
 
 # Create your views here.
-
-def booking(request):
-    return render(request, 'book/booking.html')
-
-
 @login_required(login_url='/accounts/login/')
 def profile(request, username):
     user = get_object_or_404(User, username=username)
@@ -18,3 +13,10 @@ def profile(request, username):
         'user': user
     }
     return render(request, 'profile/profile.html', context)
+
+
+@login_required(login_url='/accounts/login/')
+def booking(request):
+    
+    return render(request, 'book/booking.html')
+

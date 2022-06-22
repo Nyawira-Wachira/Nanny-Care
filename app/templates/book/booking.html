@@ -1,4 +1,47 @@
 {% extends "registration/base.html" %}
 {% load bootstrap4 %}
 {% block content %}
+<main>
+    <div class="container">
+        <a href="" class="btn btn-sm">
+            <i class="fas fa-arrow-left"></i>
+            Back to Nannies
+        </a>
+        <div class="row">
+            <div class="col-md-2 col-lg-2 col-sm-12">
+                <h3 class="text-center">
+                    selected nanny profile
+                </h3>
+            </div>
+            <div class="col-md-10 col-lg-10 col-sm-12">
+                <h3 class="text-center mt-4 mb-4">Book Service</h3>
+
+                <div class="row">
+                    <div class="col-md-6 col-lg-6">
+                        <img src="https://images.unsplash.com/photo-1641567535859-c58187ac4954?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mjh8fGNhbGVuZGFyfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60"
+                            alt="" class="img-fluid">
+
+                    </div>
+                    <div class="col-md-6 col-lg-6">
+                        <div class="btns mt-4">
+                            <a href="" class="btn btn-sm btn-secondary">
+
+                                Part Time
+                            </a> or
+                            <a href="" class="btn btn-sm btn-secondary">
+                                Full Time
+                            </a>
+                        </div>
+                        <h3 class="mt-5"><strong>Dates</strong></h3>
+                        <strong>Start Date:</strong>
+                        <input type="date">
+                        <strong>End Date:</strong>
+                        <input type="date">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
 {% endblock %}

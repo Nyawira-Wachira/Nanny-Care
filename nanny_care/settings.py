@@ -88,16 +88,16 @@ WSGI_APPLICATION = 'nanny_care.wsgi.application'
 #         'NAME': BASE_DIR / 'db.sqlite3',
 #     }
 # }
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'nanny_care',
-        'USER': 'folio',
-        'PASSWORD': '1234Abby',
-        'HOST': '127.0.0.1',
-        'PORT': '',
-    }
-}
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql_psycopg2',
+#         'NAME': 'nanny_care',
+#         'USER': 'folio',
+#         'PASSWORD': '1234Abby',
+#         'HOST': '127.0.0.1',
+#         'PORT': '',
+#     }
+# }
 
 # Password validation
 # https://docs.djangoproject.com/en/4.0/ref/settings/#auth-password-validators

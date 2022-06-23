@@ -18,80 +18,78 @@
   <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Teko&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Calistoga&family=Shrikhand&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Stoke:wght@300&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
 </head>
 
 <body>
-  <!-- <style>
-    body {
-      background-image: url("/static/img/nc.jpg");
-      background-repeat: no-repeat;
-      background-attachment: fixed;
-      background-size: cover;
-    }
-    </style> -->
-  <nav class="navbar navbar-expand-lg" id="nav" style="background:#FFC8DD;">
+    <style>
+      body {
+        background-color:#F9F3F5;
+        font-family: 'Poppins', sans-serif;
+      }
+    </style>
+
+  <nav class="navbar navbar-expand-lg" style="background:#FFC8DD;">
     <div class="container-fluid">
-      <a class="navbar-brand" href="#">Nanny-Care</a>
+      <a class="navbar-brand" href="#" style="font-size: 30px; color:black;font-family: 'Stoke', serif; ">NANNY CARE</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
         aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="topnav-right">
-        <a href="/accounts/login" style="margin-right:15px"><button type="button" class="btn btn-outline-info btn-sm">Login </button></a>
-        <a href="/accounts/register/"><button type="button" class="btn btn-outline-info btn-sm">Sign-Up</button></a>
+        <a href="/accounts/login" style="margin-right:20px"><i class="fa-solid fa-right-to-bracket" style="color:black;font-size: 30px;"></i></a>
+        <a href="/accounts/register/"><i class="fa-solid fa-user-plus" style="color:black;font-size: 30px;"></i></a>
       </div>
     </div>
   </nav>
-  <div class="container">
-    <div class="row">
-      <div class="col-md-6 my-3">
-        <h1 style="margin-top:50px;">NANNY CARE</h1>
-        <h1>Stepping in, when you need to step out.</h3><br>
-          <a href="{% url 'booking' %}"><button type="button" class="btn btn-outline-dark">Full time</button></a> or
-          <a href="{% url 'booking' %}"><button type="button" class="btn btn-outline-dark">Part time</button></a> Nanny Services
+  <div class="card bg-dark text-white">
+    <img src="https://media.istockphoto.com/photos/young-african-american-mother-enjoying-playing-toys-with-kids-picture-id1271905951?k=20&m=1271905951&s=612x612&w=0&h=6g_BjCOKAZzbRTQB3HwOWFgbeE5XUmyZZln-v8I4G8Y=" class="card-img" alt="..." style="opacity:0.5;">
+    <div class="card-img-overlay">
+      <h1 class="card-title" style="font-size: 80px; margin-top:240px;" align="center">NANNY CARE</h1>
+      <h2 class="card-text"  style="font-family: Satisfy, cursive; font-size: 45px;" align="center">Stepping in, when you need to step out.</h2>
+      <div class="btn-group" role="group" aria-label="Basic outlined example" style="margin-left:500px; margin-top:15px;">
+        <a href="{% url 'booking' %}"><button type="button" class="btn btn-dark">Full time</button></a>
+        <button type="button" class="btn btn-light">or</button></p>
+        <a href="{% url 'booking' %}"><button type="button" class="btn btn-dark">Part time</button></a> 
       </div>
-      <div class="col-md-6 my-3">
-        <img
-          src="https://media.istockphoto.com/photos/affectionate-african-mother-constructing-building-with-cubes-with-picture-id1271954653?k=20&m=1271954653&s=612x612&w=0&h=OFGsKG_uTFKvWPyA5dcHHwdD7ShWWY_9ghmZx1XMkIE="
-          class="img-fluid" alt="...">
-
-      </div>
-    </div><br>
-    <div class="row mt-4">
-      <h1 align="center">About</h1><br><br>
-      <div class="col-md-6 my-3">
-        <img
-          src="https://media.istockphoto.com/photos/african-mother-with-little-kid-son-play-with-wooden-blocks-picture-id1158481687?k=20&m=1158481687&s=612x612&w=0&h=vlJZC8vets2uoH3NgeHAkSOTpBGOdqLb33rjjXop5u8="
-          class="img-fluid" alt="...">
-      </div>
-      <div class="col-md-6 my-3">
-        <p style="margin-top:50px;">Nanny Care connects you with the help that you need.We source nannies from reputable
-          nanny companies that have assessed and approved their credibility.
-          We are basically the bridging gap between families who are in need of
-          nanny services and capable nannies who are in need of employment.
-          Take a quick look at some of our services below.</p>
+      <p align="center" style="margin-top:10px;">Nanny Services</p>
+          </div>
+        </div>
       </div>
     </div>
-    <div class="row my-5">
-      <h2 align="center">Services</h2>
-      <div class="col-md-6">
+  </div>
+  <div class="container">
+    <div class="row mt-5">
+      <h1 align="center"><strong>About</h1></strong><br><br>
+      <div class="col-md-5 my-3">
+            <p style="font-size:18px; margin-top:60px;">Nanny Care connects you with the help that you need.We source nannies from reputable
+              nanny companies that have assessed and approved their credibility.
+              We are basically the bridging gap between families who are in need of
+              nanny services and capable nannies who are in need of employment.
+              Take a quick look at some of our services below.
+            </p>                 
+      </div>
+      <div class="col-md-7 my-3">
         <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
           <div class="carousel-inner">
             <div class="carousel-item active">
+              <img
+                src="https://media.istockphoto.com/photos/african-mother-with-little-kid-son-play-with-wooden-blocks-picture-id1158481687?k=20&m=1158481687&s=612x612&w=0&h=vlJZC8vets2uoH3NgeHAkSOTpBGOdqLb33rjjXop5u8="
+                class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item">
               <img
                 src="https://media.istockphoto.com/photos/affectionate-millennial-biracial-mom-carrying-on-hands-funny-kid-picture-id1271954663?k=20&m=1271954663&s=612x612&w=0&h=vuhVyhxRfwWcU7REcTqmrDxd2hW4SzUz7PeBMNP5R8w="
                 class="d-block w-100" alt="...">
             </div>
             <div class="carousel-item">
               <img
-                src="https://media.istockphoto.com/photos/hispanic-young-adult-woman-babysitting-child-and-helping-with-picture-id1057339834?k=20&m=1057339834&s=612x612&w=0&h=qRvzEu_podcN9SorFpfeMNsC4Y5L5jmnGSc39SZSAVM="
-                class="d-block w-100" alt="...">
-            </div>
-            <div class="carousel-item">
-              <img
                 src="https://media.istockphoto.com/photos/connected-african-american-woman-baby-sitter-get-acquainted-with-picture-id1247962696?k=20&m=1247962696&s=612x612&w=0&h=PhB3DKnqAYRVFREMkFvmHx-howP6smIl9XZ_FDStFIg="
                 class="d-block w-100" alt="...">
+                
             </div>
           </div>
           <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls"
@@ -106,32 +104,62 @@
           </button>
         </div>
       </div>
+    <div class="row my-5">
+      <h2 align="center"><strong>Services</strong></h2>
+      <div class="col-md-6 my-3">
+        <img
+          src="https://media.istockphoto.com/photos/affectionate-african-mother-constructing-building-with-cubes-with-picture-id1271954653?k=20&m=1271954653&s=612x612&w=0&h=OFGsKG_uTFKvWPyA5dcHHwdD7ShWWY_9ghmZx1XMkIE="
+          class="img-fluid" alt="...">
+
+      </div>
+
       <div class="col-md-6">
         <br>
         <div class="card">
           <div class="card-body">
-            <p>You can view available nannies from a variety of nanny companies.</p>
+            <p style="font-size:16px;">You can view available nannies from a variety of nanny companies.</p>
           </div>
         </div><br><br>
         <div class="card">
           <div class="card-body">
-            <p>You can select your preferred nanny from your preferred company.</p>
+            <p  style="font-size:16px;">You can select your preferred nanny from your preferred company.</p>
           </div>
         </div><br><br>
         <div class="card">
           <div class="card-body">
-            <p>You can vet the selected nanny and then come up with terms of payment.</p>
+            <p  style="font-size:16px;">You can vet the selected nanny and then come up with terms of payment.</p>
           </div>
         </div>
       </div>
     </div>
+    </div>
 
   </div><br><br>
-  <footer style="background:#FFC8DD">
-    <p>Email : Nannycare@gmail.com</p>
-    <p>Contacts:0712345678</p>
-    <font-awesome-icon icon="fa-brands fa-facebook" />
-    <p align="center" style="margin-bottom:4px; font-family: Satisfy, cursive; font-size:25px;">Nannycare @2022</p>
+  <footer style="background:pink;font-size:17px; display:flex; justify-content: center;">
+    <div class="row container">
+      <div class="col-md-4 my-4">
+        <p>Nannycare@gmail.com</p>
+        <p>Contacts:0712345678</p>
+        <p>Nannycare @2022</p>
+      </div>
+      <div class="col-md-4 my-4">
+        <p>Search Nanny Company</p>
+        <p>Find a Nanny</p>
+        <p>Negotiate Cost</p>
+      </div>
+      <div class="col-md-4 my-4">
+        <p>Support</p>
+        <p>Trouble Shooting</p>
+        <p>Contact Us</p>
+      </div>
+      <p style="font-size:33px" align="center">
+        <a href="https://web.facebook.com/"><i class="fa-brands fa-facebook" style="margin-right:10px; color:black;"></i></a>
+        <a href="https://twitter.com/"><i class="fa-brands fa-twitter" style="margin-right:10px;color:black;"></i></a>
+        <a href="https://www.instagram.com/"><i class="fa-brands fa-instagram"style="margin-right:10px;color:black;"></i></a>
+        <a href="https://www.linkedin.com/"><i class="fa-brands fa-linkedin" style="color:black;"></i></a>
+      </p>
+   
+    <br><p align="center" style="margin-bottom:4px; font-family: Satisfy, cursive; font-size:35px;">Nannycare.Inc</p>
   
   </footer>
 

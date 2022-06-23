@@ -2,19 +2,42 @@
 {% load bootstrap4 %}
 {% block content %}
 <main>
-    <div class="container">
-        <a href="" class="btn btn-sm">
-            <i class="fas fa-arrow-left"></i>
-            Back to Nannies
-        </a>
-        <div class="row">
-            <div class="col-md-2 col-lg-2 col-sm-12">
-                <h3 class="text-center">
-                    selected nanny profile
-                </h3>
+    <nav class=" navbar navbar-expand-lg sticky-top  " id="navcolor">
+        <div class="container-fluid">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+              <ul class="navbar-nav">
+                <li class="nav-item active">
+                  <a href="/home/" class="nav-link btn btn-sm">
+                    <i class="fas fa-home"></i>
+                    Home
+                </a>
+                </li>
+              </ul>
+              <ul class="nav navbar-nav navbar-right ml-auto mr-5"> 
+                <a href="" class="nav-link  btn btn-sm">
+                    <!-- <i class="fas fa-arrow-left"></i> -->
+                    Companies
+                </a>
+                <a href="/nannies/" class="nav-link  btn btn-sm">
+                    <!-- <i class="fas fa-arrow-left"></i> -->
+                    Nannies
+                </a>
+                
+                  <a class="nav-link btn btn-sm" href="/logout">Logout <i class="fas fa-sign-out-alt"></i></a>
+              </ul>
             </div>
-            <div class="col-md-10 col-lg-10 col-sm-12">
-                <h3 class="text-center mt-4 mb-4">Book Service</h3>
+        </div>
+      </nav>
+    <div class="container mb-5">
+        <div class="row">
+            <div class="col-md-2 col-lg-2 col-sm-12 text-center">
+
+            </div>
+            <div class="col-md-8 col-lg-8 col-sm-12">
+                <h1 class="text-center mt-4 mb-4"> <strong>Book Service</strong> </h1>
 
                 <div class="row">
                     <div class="col-md-6 col-lg-6">
@@ -22,26 +45,62 @@
                             alt="" class="img-fluid">
 
                     </div>
-                    <div class="col-md-6 col-lg-6">
+                    <div class="col-md-6 col-lg-6 text-center">
+                        <div class="card book-card">
+                            <h3 class="">
+                                Nanny profile <br>
+                            </h3>
+                            <div class="text-center">
+                            <img src="{{nanny.profile_pic.url}}" alt="" class="img-fluid"
+                                style="width: 140px; height:140px; border-radius:50%;">
+                            </div>
+                            <div>
+                                <h5 class="text-center mt-4">
+                                    {{nanny.name}} {{nanny.last_name}}
+                                </h5>
+                                <h5 class="text-center mt-4">
+                                    {{nanny.age}}
+                                </h5>
+                                <h5 class="text-center mt-4">
+                                    {{nanny.experience}}
+                                </h5>
+                                <h5 class="text-center mt-4">
+                                    {{nanny.location}}
+                                </h5>
+                                <h5 class="text-center mt-4" id="rates">
+                                    {{nanny.rates}}/= per hour
+                                </h5>
+                            </div>
+                        </div>
                         <div class="btns mt-4">
-                            <a href="" class="btn btn-sm btn-secondary">
+                            <a href="" class="btn btn-sm btn-secondary" id="part-time" onclick="addText()">
 
                                 Part Time
-                            </a> or
-                            <a href="" class="btn btn-sm btn-secondary">
+                            </a> <span class="or"> or</span>
+                            <a href="" class="btn btn-sm btn-secondary" id="full-time" onclick="addText()">
                                 Full Time
                             </a>
+                            <p id="addHere"></p>
                         </div>
-                        <h3 class="mt-5"><strong>Dates</strong></h3>
-                        <strong>Start Date:</strong>
-                        <input type="date">
-                        <strong>End Date:</strong>
-                        <input type="date">
-
+                        <div>
+                            <h3 class="mt-5"><strong>Dates</strong></h3>
+                            <p>
+                                <strong>Start Date:</strong>
+                                <input type="date" id="start-date"> <br>
+                                
+                                <strong>End Date:</strong>
+                                <input type="date" id="end-date">
+                            </>
+                        </div>
+                        <div class="btn btn-sm btn-secondary" id="conf-btn">Confirm</div>
                     </div>
                 </div>
             </div>
+            <div class="col-md-2 col-lg-2 col-sm-12 text-center">
+
+            </div>
         </div>
     </div>
+    {% include "footer.html" %}
 </main>
 {% endblock %}

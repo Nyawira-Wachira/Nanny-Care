@@ -38,7 +38,9 @@ On terminal where you have opened the cloned project
 `sudo pip3 install virtualenv`
 
 To install virtual enviroment
- `virtualenv venv` - To create virtual enviroment
+ `virtualenv venv`
+
+To create virtual enviroment
 `source venv/bin/activate`
 
 To activate virtual enviroment

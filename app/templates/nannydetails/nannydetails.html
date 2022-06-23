@@ -41,6 +41,8 @@
                 <h4> {{result.about}}</h4>
                 <h3><strong>Skills:</strong></h3>
                 <h4>{{result.skills}}</h4>
+                <h3><strong>Company:</strong></h3>
+                <h4>{{result.company}}</h4>
                 <button class="btn"><i class="fa fa-info-circle"></i> <a href="{% url 'booking' result.name %}">BOOK
                         SERVICE</a> </button>
 
@@ -70,11 +72,14 @@
                 <h1 style="margin-bottom:15px; text-align: justify;"><strong>{{nannies.name}}</strong> </h1>
 
                 <h5 style="margin-bottom:15px; text-align: justify;">NANNY RATING:</h5>
-                <span class="fa fa-star checked text-warning"></span>
-                <span class="fa fa-star checked text-warning"></span>
-                <span class="fa fa-star checked text-warning"></span>
-                <span class="fa fa-star checked text-warning"></span>
-                <span class="fa fa-star checked text-warning"></span>
+                <strong>
+                    <span class="fa fa-star checked text-warning"></span>
+                    <span class="fa fa-star checked text-warning"></span>
+                    <span class="fa fa-star checked text-warning"></span>
+                    <span class="fa fa-star checked text-warning"></span>
+                    <span class="fa fa-star checked text-warning"></span>
+                </strong>
+
             </div>
             <div class="col-4">
                 <h2 style="margin-bottom:15px; text-align: justify;">AVAILABILITY:
@@ -85,6 +90,8 @@
                 </h2>
                 <h2 style="margin-bottom:15px; text-align: justify;">EXPERIENCE:
                     {{nannies.experience}}</h2>
+                <h2 style="margin-bottom:15px; text-align: justify;">COMPANY:
+                    {{nannies.company}}</h2>
             </div>
         </div>
     </div>

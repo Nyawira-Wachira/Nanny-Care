@@ -23,14 +23,11 @@
 
 
 <div class="d-flex">
-
-
     {% for result in results %}
-
     <div class="row nanny2">
-        <div class="col-lg-6 col-md-6 mx-auto">
+        <div class="col-lg-6 col-md-6 mx-auto border">
             <div class="card-body">
-                <img src="{{result.profile_pic.url}}" class="card-img-top img-fluid" alt="{{nannies.name}}"
+                <img src="{{result.profile_pic.url}}" class=" card-img-top img-fluid" alt="{{nannies.name}}"
                     style="height: 250px; width: 350px;">
                 <h3> <strong>Name: </strong> </h3>
                 <h4>{{result.name}}</h4>
@@ -44,7 +41,7 @@
                 <h4> {{result.about}}</h4>
                 <h3><strong>Skills:</strong></h3>
                 <h4>{{result.skills}}</h4>
-                <button class="btn"><i class="fa fa-info-circle"></i> <a href="{% url 'booking' name %}">BOOK
+                <button class="btn"><i class="fa fa-info-circle"></i> <a href="{% url 'booking' result.name %}">BOOK
                         SERVICE</a> </button>
 
             </div>

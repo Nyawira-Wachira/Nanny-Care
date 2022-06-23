@@ -78,7 +78,13 @@ def search_product(request):
 
 @login_required(login_url='/accounts/login/')
 def companydetails(request,companyname):
-    nannies = Company.objects.filter(name=companyname).all()
-    context={"nannies":nannies}
+    # company = Company.objects.filter(name=companyname)
+    company = Company.objects.get(name=companyname)
+    nannies = Nanny.objects.filter(company=company)
+    
+    context={
+        "nannies":nannies,
+             'company':company
+             }
 
     return render(request, 'companydetails/company_detail.html', context)

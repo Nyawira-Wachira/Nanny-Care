@@ -1,6 +1,5 @@
 body {
-    /* background-color: #f9f3f5; */
-
+    background-color: #f9f3f5;
     font-family: 'Poppins', sans-serif;
 
 }
@@ -28,7 +27,7 @@ h5 {
 
 
 .btn {
-    background-color: #BDE0FE;
+    background-color: #FFAFCC;
     margin-top: 5px;
 
 }
@@ -39,7 +38,8 @@ a {
 }
 
 .nanny1 {
-    background-color: #f9f3f5;
+    /* background-color: #f9f3f5; */
+    background-color: #BDE0FE;
     margin-top: 50px;
     margin-bottom: 50px;
     margin-left: 100px;

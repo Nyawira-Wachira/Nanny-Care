@@ -1,0 +1,67 @@
+{% extends "registration/base.html" %}
+{% load bootstrap4 %}
+{% load crispy_forms_tags %}
+{% block content %}
+<main>
+    <div class="container mt-5">
+        <a href="/nannies/" class="btn btn-sm">
+            <i class="fas fa-arrow-left"></i>
+            Back
+        </a>
+        <a href="/home/" class="btn btn-sm">
+            <i class="fas fa-home"></i>
+            Home
+        </a>
+        <div class="row">
+            <div class="col-md col-lg col-md-12">
+
+                <!-- user profile details -->
+                <h3 class="fw-5">My Profile</h3>
+                <div class="card p-3">
+                    <p>profile pic here</p>
+                    <img src="{{user.profile_pic.url}}" alt="">
+                    <p>
+                        <strong>Username: </strong>{{request.user.username}} <br>
+                        <strong>Email: </strong>{{user.email}}
+                        <strong>Bio: </strong>{{request.user.bio}}
+                    </p>
+                    <div>
+                        <p>
+                            <a href="" class="btn btn-sm btn-dark" id="update-btn">Update Profile</a>
+                        </p>
+                    </div>
+                </div>
+                <div class="update-form m-5" style="display:none;">
+                    <h4 >Update Profile </h4>
+                    <hr class="mb-5">
+
+                    <form action="" method="post" enctype="multipart/form-data">
+                        {% csrf_token %}
+                        {{user_form|crispy}}
+                        <div class="mb-3">
+                            <strong class="strong">New Profile Picture</strong>
+                            {{form.profile_pic}}
+                        </div>
+                        <div class="mb-3 mt-3">
+                            <strong class="strong">New Bio</strong>
+                            {{form.bio}}
+                        </div>
+                        <p class="fs-3">{{ form.errors }}</p>
+                        <input type="submit" class="btn btn-primary fw-bold btn-sm" value="Update">
+                    </form>
+                </div>
+
+            </div>
+            <div class="col-md col-lg col-md-12 card ml-3">
+                <!-- for loop to hold previously booked nannies -->
+                <div class="previous">
+                    <h3>Previous Nannies</h3>
+                    <p><strong>Name: </strong> NanCy</p>
+                    <p><strong>Rating: </strong> 4 star</p>
+                    <p> <strong>Dates: </strong> Jan 4 2021 to March 30 2021 </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+{% endblock %}

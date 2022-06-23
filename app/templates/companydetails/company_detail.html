@@ -1,0 +1,111 @@
+{% extends 'companydetails/base.html' %}
+{% load bootstrap4 %}
+
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous">
+</script>
+<link href="/static/css/styles.css" rel="stylesheet">
+
+<title>Company details</title>
+
+</head>
+<body>
+    <h3 class="text-center"><u><b> Nanny Care </b></u></h3>
+    <p class="text-center">Do you need a nanny?</p>
+    <P class="text-center">In a couple of minutes you can have one</P>
+    {% for image in gallery %}
+    
+    <!-- <img src="/static/img/nanny1.webp" class="card-img-top" alt="..."> -->
+  <div class="row">
+  <div class="col-lg-8 col-md-10 mx-auto">
+    <div class="card-body">
+    <img class="card-img-top" src="{{ image.profilepic.url }}" data-toggle="modal" data-target="#myModal{{image.id}}"
+      style="height:150px;" />
+    <p><strong>Name: </strong> {{image.name}}</p>
+    <p><strong>Age: </strong> {{image.age}}</p>
+    <p> <strong>Location: </strong> {{image.location}} </p>
+    <p> <strong>Available: </strong> {{image.available}}</p>
+    <p> <strong>About: </strong> {{image.about}}</p>
+    <p> <strong>Skills: </strong> {{image.skills}}</p>
+    <p class="card-text">Hard working panctual and iteligent,Can multitask on various activities.</p>
+    <button class="btn btn-primary"><i></i><a href="/booking/">Book</a></button>
+    <!-- <a href="#" class="btn btn-primary" style="margin-bottom:30px;">Book</a> -->
+    </div>
+
+  </div>
+  </div>
+
+{% endfor %}
+</div>
+
+<div class="container">
+<div class="row">
+    <div class="col-lg-8 col-md-10 mx-auto">
+        <ul class="list-inline text-center">
+            <li class="list-inline-item">
+                <a href="https://www.facebook.com/NannyCare/" target="_blank">
+                    <span class="fa-stack fa-lg">
+                        <i class="fas fa-circle fa-stack-2x"></i>
+                        <i class="fab fa-facebook fa-stack-1x fa-inverse"></i>
+                    </span>
+                </a>
+            </li>
+            <li class="list-inline-item">
+                <a href="https://www.pinterest.com/NannyCare/" target="_blank">
+                    <span class="fa-stack fa-lg">
+                        <i class="fas fa-circle fa-stack-2x"></i>
+                        <i class="fab fa-pinterest fa-stack-1x fa-inverse"></i>
+                    </span>
+                </a>
+            </li>
+            <li class="list-inline-item">
+                <a href="https://mobile.linkedIn.com/NannyCare" target="_blank">
+                    <span class="fa-stack fa-lg">
+                        <i class="fas fa-circle fa-stack-2x"></i>
+                        <i class="fab fa-linkedIn fa-stack-1x fa-inverse"></i>
+                    </span>
+                </a>
+            </li>
+            <li class="list-inline-item">
+                <a href="https://www.twitter.com/NannyCare/" target="_blank">
+                    <span class="fa-stack fa-lg">
+                        <i class="fas fa-circle fa-stack-2x"></i>
+                        <i class="fab fa-twitter fa-stack-1x fa-inverse"></i>
+                    </span>
+                </a>
+            </li>
+            <li class="list-inline-item">
+                <a href="https://instagram.com/NannyCare" target="_blank">
+                    <span class="fa-stack fa-lg">
+                        <i class="fas fa-circle fa-stack-2x"></i>
+                        <i class="fab fa-instagram fa-stack-1x fa-inverse"></i>
+                    </span>
+                </a>
+            </li>
+        </ul>
+        <P class="contact text-center">Contact us on</P>
+        <P class="no text-center">012345678/09876543</P>
+        <p class="copyright text-center">Copyright &copy; Nanny Care</p>
+    </div>
+</div>
+</div>
+<!-- </links> -->
+    </div>
+
+</body>
+</html>
+{%endblock%}
+

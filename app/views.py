@@ -77,7 +77,8 @@ def search_product(request):
 
 
 @login_required(login_url='/accounts/login/')
-def companydetails(request):
-    gallery = Nanny.objects.all()[:8]
+def companydetails(request,companyname):
+    nannies = Company.objects.filter(name=companyname).all()
+    context={"nannies":nannies}
 
-    return render(request, 'companydetails/company_detail.html', {'gallery': gallery})
+    return render(request, 'companydetails/company_detail.html', context)

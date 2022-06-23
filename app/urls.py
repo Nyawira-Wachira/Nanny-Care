@@ -11,7 +11,7 @@ urlpatterns = [
     path('nannies/', views.details, name='welcome'),
     path('search/', views.search_product, name='search'),
     path('home/', views.home, name='home'),
-    path('companydetails/', views.companydetails, name='companydetails'),
+    path('companydetails/<str:companyname>/', views.companydetails, name='companydetails'),
 ]
 
 if settings.DEBUG:

@@ -26,20 +26,20 @@
     <h3 class="text-center"><u><b> Nanny Care </b></u></h3>
     <p class="text-center">Do you need a nanny?</p>
     <P class="text-center">In a couple of minutes you can have one</P>
-    {% for image in gallery %}
+    {% for nanny in nannies %}
     
     <!-- <img src="/static/img/nanny1.webp" class="card-img-top" alt="..."> -->
   <div class="row">
   <div class="col-lg-8 col-md-10 mx-auto">
     <div class="card-body">
-    <img class="card-img-top" src="{{ image.profilepic.url }}" data-toggle="modal" data-target="#myModal{{image.id}}"
+    <img class="card-img-top" src="{{ nanny.profilepic.url }}" data-toggle="modal" data-target="#myModal{{nanny.id}}"
       style="height:150px;" />
-    <p><strong>Name: </strong> {{image.name}}</p>
-    <p><strong>Age: </strong> {{image.age}}</p>
-    <p> <strong>Location: </strong> {{image.location}} </p>
-    <p> <strong>Available: </strong> {{image.available}}</p>
-    <p> <strong>About: </strong> {{image.about}}</p>
-    <p> <strong>Skills: </strong> {{image.skills}}</p>
+    <p><strong>Name: </strong> {{nanny.name}}</p>
+    <p><strong>Age: </strong> {{nanny.age}}</p>
+    <p> <strong>Location: </strong> {{nanny.location}} </p>
+    <p> <strong>Available: </strong> {{nanny.available}}</p>
+    <p> <strong>About: </strong> {{nanny.about}}</p>
+    <p> <strong>Skills: </strong> {{nanny.skills}}</p>
     <p class="card-text">Hard working panctual and iteligent,Can multitask on various activities.</p>
     <button class="btn btn-primary"><i></i><a href="/booking/">Book</a></button>
     <!-- <a href="#" class="btn btn-primary" style="margin-bottom:30px;">Book</a> -->

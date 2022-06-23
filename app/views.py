@@ -17,7 +17,11 @@ def Index(request):
 
 @login_required(login_url='/accounts/login/')
 def home(request):
-    return render(request, 'home.html')
+    companies=Company.objects.all()
+    
+    context={"companies":companies}
+    
+    return render(request, 'home.html', context)
 
 
 @login_required(login_url='/accounts/login/')

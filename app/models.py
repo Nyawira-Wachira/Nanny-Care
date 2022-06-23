@@ -61,7 +61,7 @@ class Nanny(models.Model):
     about = models.TextField(default="Some String")
     skills = models.TextField(default="Some String")
     companies = models.ForeignKey(
-        Company, on_delete=models.CASCADE, default=1)
+        Company, on_delete=models.CASCADE)
 
     def save_profile(self):
         self.save()

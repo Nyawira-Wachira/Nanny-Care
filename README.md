@@ -35,13 +35,23 @@ code . or atom . based on prefered text editor
 ## Running Project
 
 On terminal where you have opened the cloned project
-`sudo pip3 install virtualenv` - To install virtual enviroment
+`sudo pip3 install virtualenv`
+
+To install virtual enviroment
  `virtualenv venv` - To create virtual enviroment
-`source venv/bin/activate` - To activate virtual enviroment
-`pip install -r requirements.txt` - To install requirements
+`source venv/bin/activate`
+
+To activate virtual enviroment
+`pip install -r requirements.txt`
+
+To install requirements
 Setup your database User, Password, Host, Port and Database Name.
-`make makemigrations` - To create migrations
-`make migrate` - To migrate database  
+`make makemigrations`
+
+To create migrations
+`make migrate`
+
+To migrate database  
 `make` - to start the server
 
 ## Running Tests

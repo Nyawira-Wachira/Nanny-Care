@@ -26,6 +26,7 @@
     <h3 class="text-center"><u><b> Nanny Care </b></u></h3>
     <p class="text-center">Do you need a nanny?</p>
     <P class="text-center">In a couple of minutes you can have one</P>
+    {{company.name}} company name
     {% for nanny in nannies %}
     
     <!-- <img src="/static/img/nanny1.webp" class="card-img-top" alt="..."> -->
@@ -41,7 +42,7 @@
     <p> <strong>About: </strong> {{nanny.about}}</p>
     <p> <strong>Skills: </strong> {{nanny.skills}}</p>
     <p class="card-text">Hard working panctual and iteligent,Can multitask on various activities.</p>
-    <button class="btn btn-primary"><i></i><a href="/booking/">Book</a></button>
+    <button class="btn btn-primary"><i></i><a href="{%url 'booking' nanny.name %}">Book</a></button>
     <!-- <a href="#" class="btn btn-primary" style="margin-bottom:30px;">Book</a> -->
     </div>
 

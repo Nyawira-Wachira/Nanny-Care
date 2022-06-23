@@ -1,45 +1,77 @@
 {% extends "registration/base.html" %}
 {% load bootstrap4 %}
+{% load static %}
 {% load crispy_forms_tags %}
 {% block content %}
 <main>
+    
+    <nav class=" navbar navbar-expand-lg sticky-top  " id="navcolor">
+        <div class="container-fluid">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+              <ul class="navbar-nav">
+                <li class="nav-item active">
+                  <a href="/home/" class="nav-link btn btn-sm">
+                    <i class="fas fa-home"></i>
+                    Home
+                </a>
+                </li>
+              </ul>
+              <ul class="nav navbar-nav navbar-right ml-auto mr-5"> 
+                <a href="" class="nav-link  btn btn-sm">
+                    <!-- <i class="fas fa-arrow-left"></i> -->
+                    Companies
+                </a>
+                <a href="/nannies/" class="nav-link  btn btn-sm">
+                    <!-- <i class="fas fa-arrow-left"></i> -->
+                    Nannies
+                </a>
+                
+                  <a class="nav-link btn btn-sm" href="/logout">Logout</a>
+              </ul>
+            </div>
+        </div>
+      </nav>
     <div class="container mt-5">
-        <a href="/nannies/" class="btn btn-sm">
-            <i class="fas fa-arrow-left"></i>
-            Back
-        </a>
-        <a href="/home/" class="btn btn-sm">
-            <i class="fas fa-home"></i>
-            Home
-        </a>
+       
         <div class="row">
-            <div class="col-md col-lg col-md-12">
+            <div class="col-md-2 col-lg-2"></div>
+            <div class="col-md col-lg col-md-12  mt-5">
 
                 <!-- user profile details -->
-                <h3 class="fw-5">My Profile</h3>
-                <div class="card p-3">
+                <h3 class="fw-5 mt-5">My Profile</h3>
+                <div class="card p-3 book-card">
+                    <div class="text-center">
+                    {% if user.profile_pic %}
                     <p>profile pic here</p>
                     <img src="{{user.profile_pic.url}}" alt="">
+                    {% else %}
+                    <p><i class="fa-solid fa-circle-user h1 "></i></p>
+                    {% endif %}
+                </div>
                     <p>
                         <strong>Username: </strong>{{request.user.username}} <br>
                         <strong>Email: </strong>{{user.email}}
-                        <strong>Bio: </strong>{{request.user.bio}}
                     </p>
                     <div>
                         <p>
-                            <a href="" class="btn btn-sm btn-dark" id="update-btn">Update Profile</a>
+                            <a href="" class="btn btn-sm btn-dark" id="update-btn">  Update Profile</a>
                         </p>
                     </div>
                 </div>
-                <div class="update-form m-5" style="display:none;">
-                    <h4 >Update Profile </h4>
+                <div class="update-form m-5 text-center" style="display:none;">
+                   <h2>                    <strong> Update Profile</strong>
+                   </h2>
                     <hr class="mb-5">
 
                     <form action="" method="post" enctype="multipart/form-data">
                         {% csrf_token %}
+                       
                         {{user_form|crispy}}
-                        <div class="mb-3">
-                            <strong class="strong">New Profile Picture</strong>
+                        <div class="mb-3 mt-2">
+                            <strong class="strong">New Profile </strong>
                             {{form.profile_pic}}
                         </div>
                         <div class="mb-3 mt-3">
@@ -47,19 +79,19 @@
                             {{form.bio}}
                         </div>
                         <p class="fs-3">{{ form.errors }}</p>
-                        <input type="submit" class="btn btn-primary fw-bold btn-sm" value="Update">
+                        <input type="submit" class="btn  fw-bold btn-sm" id="update" value="Update">
                     </form>
                 </div>
 
             </div>
-            <div class="col-md col-lg col-md-12 card ml-3">
+            <div class="col-md-2 col-lg-2">
                 <!-- for loop to hold previously booked nannies -->
-                <div class="previous">
+                <!-- <div class="previous">
                     <h3>Previous Nannies</h3>
                     <p><strong>Name: </strong> NanCy</p>
                     <p><strong>Rating: </strong> 4 star</p>
                     <p> <strong>Dates: </strong> Jan 4 2021 to March 30 2021 </p>
-                </div>
+                </div> -->
             </div>
         </div>
     </div>

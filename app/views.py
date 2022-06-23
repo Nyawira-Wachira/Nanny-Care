@@ -12,7 +12,6 @@ from .forms import UpdateProfileForm, UpdateUserForm
 
 
 def Index(request):
-
     return render(request, 'index.html')
 
 

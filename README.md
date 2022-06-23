@@ -18,48 +18,46 @@ An application where parents/guardians can easily get nannies to take care of th
 
 ## Requirements
 
-+ A computer running on either Windows, MacOS or Ubuntu operating system installed with the following:
+A computer running on either Windows, MacOS or Ubuntu operating system installed with the following:
 
-```-Python version 3.8
+-Python version 3.8
     -Django
     -Pip
     -virtualenv
 
 ## Installation
 
-+ Open Terminal {Ctrl+Alt+T} on ubuntu
-+ git clone `https://github.com/John-Njau/Nanny-Care.git`
-+ cd
-+ code . or atom . based on prefered text editor
+Open Terminal {Ctrl+Alt+T} on ubuntu
+git clone `https://github.com/John-Njau/Nanny-Care.git`
+cd
+code . or atom . based on prefered text editor
 
- 
 ## Running Project
 
-+ On terminal where you have opened the cloned project
-  + `sudo pip3 install virtualenv` - To install virtual enviroment
-  + `virtualenv venv` - To create virtual enviroment
-  + `source venv/bin/activate` - To activate virtual enviroment
-  + `pip install -r requirements.txt` - To install requirements
-  + Setup your database User, Password, Host, Port and Database Name.
-  + `make makemigrations` - To create migrations
-  + `make migrate` - To migrate database  
-  + `make` - to start the server
- 
+On terminal where you have opened the cloned project
+`sudo pip3 install virtualenv` - To install virtual enviroment
+ `virtualenv venv` - To create virtual enviroment
+`source venv/bin/activate` - To activate virtual enviroment
+`pip install -r requirements.txt` - To install requirements
+Setup your database User, Password, Host, Port and Database Name.
+`make makemigrations` - To create migrations
+`make migrate` - To migrate database  
+`make` - to start the server
+
 ## Running Tests
 
-+ To run test for the project
-  + `$ make test`
-
+To run test for the project
+`$ make test`
 
 ## Technologies Used
 
-+ python3.8
-+ django 
-+ HTML
-+ css
-+ Javascript
-+ Cloudninary (for hosting images)
-+ Heroku (for hosting the project)
+python3.8
+django
+HTML
+css
+Javascript
+Cloudninary (for hosting images)
+Heroku (for hosting the project)
 
 ## Licence
 

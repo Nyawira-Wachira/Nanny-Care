@@ -52,11 +52,17 @@ To run test for the project
 ## Technologies Used
 
 python3.8
+
 django
+
 HTML
+
 css
+
 Javascript
+
 Cloudninary (for hosting images)
+
 Heroku (for hosting the project)
 
 ## Licence

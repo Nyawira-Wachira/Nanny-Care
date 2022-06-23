@@ -9,7 +9,10 @@ from .models import User, Nanny, Bio, UserProfile
 from .forms import UpdateProfileForm,UpdateUserForm
 
 # Create your views here.
+
+
 def Index(request):
+
     return render(request, 'index.html')
 
 
@@ -34,13 +37,13 @@ def profile(request, username):
         profile_form = UpdateProfileForm()
         user_form =UpdateUserForm(instance=request.user)
     
+
     context = {
         'user': user,
         'form': profile_form,
         'user_form': user_form,
     }
     return render(request, 'profile/profile.html', context)
-
 
 
 @login_required(login_url='/accounts/login/')
@@ -55,11 +58,22 @@ def booking(request):
 def details(request):
     
     nanny = Nanny.objects.all()
-    return render(request, 'nannydetails/nannydetails.html', {'nanny':nanny})
+    return render(request, 'nannydetails/nannydetails.html', {'nanny': nanny})
+
+
+def search_product(request):
+    """ search function  """
+    if request.method == "POST":
+        query_name = request.POST.get('name', None)
+        if query_name:
+            results = Nanny.objects.filter(name__contains=query_name)
+            return render(request, 'nannydetails/nannydetails.html', {"results": results})
+
+    return render(request, 'nannydetails/nannydetails.html')
 
 
 @login_required(login_url='/accounts/login/')
 def companydetails(request):
-    gallery = Nanny.objects.all() [:8]
+    gallery = Nanny.objects.all()[:8]
 
-    return render (request, 'companydetails/company_detail.html',{'gallery':gallery})
+    return render(request, 'companydetails/company_detail.html', {'gallery': gallery})

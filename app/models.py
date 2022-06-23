@@ -60,8 +60,8 @@ class Nanny(models.Model):
     location = models.CharField(max_length=50, blank=True)
     about = models.TextField(default="Some String")
     skills = models.TextField(default="Some String")
-    companies = models.ForeignKey(
-        Company, on_delete=models.CASCADE)
+    company = models.ForeignKey(Company,on_delete=models.CASCADE, default=1 )
+    
 
     def save_profile(self):
         self.save()

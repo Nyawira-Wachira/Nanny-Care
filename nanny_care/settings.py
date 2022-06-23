@@ -38,12 +38,13 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    
+
     # register app
     'app',
     'bootstrap4',
     'rest_framework',
     'rest_framework.authtoken',
+    'crispy_forms',
 ]
 
 MIDDLEWARE = [
@@ -54,7 +55,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    
+
 ]
 
 ROOT_URLCONF = 'nanny_care.urls'
@@ -91,9 +92,9 @@ WSGI_APPLICATION = 'nanny_care.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'nannycare',
-        'USER': 'vanili',
-        'PASSWORD': 'Swift3030',
+        'NAME': 'nanny',
+        'USER': 'moringa',
+        'PASSWORD': 'tribs',
         'HOST': '127.0.0.1',
         'PORT': '',
     }
@@ -136,14 +137,14 @@ USE_TZ = True
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static'),
-                    ]
+]
 
 MEDIA_URL = '/media/'
-MEDIA_ROOR =os.path.join( BASE_DIR, 'media')
+MEDIA_ROOR = os.path.join(BASE_DIR, 'media')
 
 
-LOGIN_REDIRECT_URL='/'
-LOGOUT_REDIRECT_URL ='accounts:login'
+LOGIN_REDIRECT_URL = 'home'
+LOGOUT_REDIRECT_URL = '/'
 
 
 # Default primary key field type

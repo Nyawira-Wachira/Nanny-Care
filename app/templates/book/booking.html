@@ -2,18 +2,40 @@
 {% load bootstrap4 %}
 {% block content %}
 <main>
-    <div class="container">
-        <a href="" class="btn btn-sm">
+    <div class="container mb-5">
+        <a href="/nannies/" class="btn btn-sm">
             <i class="fas fa-arrow-left"></i>
             Back to Nannies
         </a>
+        <a href="/logout">
+            Log Out <i class="fas fa-sign-out-alt"></i>
+        </a>
         <div class="row">
-            <div class="col-md-2 col-lg-2 col-sm-12">
+            <div class="col-md-3 col-lg-3 col-sm-12 text-center">
                 <h3 class="text-center">
-                    selected nanny profile
+                    selected nanny profile <br>
                 </h3>
+                <img src="{{nanny.profile_pic.url}}" alt="" class="img-fluid"
+                    style="width: 140px; height:140px; border-radius:50%;">
+                <div>
+                    <h5 class="text-center mt-4">
+                        {{nanny.name}} {{nanny.last_name}}
+                    </h5>
+                    <h5 class="text-center mt-4">
+                        {{nanny.age}}
+                    </h5>
+                    <h5 class="text-center mt-4">
+                        {{nanny.experience}}
+                    </h5>
+                    <h5 class="text-center mt-4">
+                        {{nanny.location}}
+                    </h5>
+                    <h5 class="text-center mt-4">
+                        {{nanny.rates}}/= per hour
+                    </h5>
+                </div>
             </div>
-            <div class="col-md-10 col-lg-10 col-sm-12">
+            <div class="col-md-9 col-lg-9 col-sm-12">
                 <h3 class="text-center mt-4 mb-4">Book Service</h3>
 
                 <div class="row">
@@ -24,24 +46,30 @@
                     </div>
                     <div class="col-md-6 col-lg-6">
                         <div class="btns mt-4">
-                            <a href="" class="btn btn-sm btn-secondary">
+                            <a href="" class="btn btn-sm btn-secondary" id="part-time" onclick="addText()">
 
                                 Part Time
-                            </a> or
-                            <a href="" class="btn btn-sm btn-secondary">
+                            </a> <span class="or"> or</span>
+                            <a href="" class="btn btn-sm btn-secondary" id="full-time" onclick="addText()">
                                 Full Time
                             </a>
+                            <p id="addHere"></p>
                         </div>
-                        <h3 class="mt-5"><strong>Dates</strong></h3>
-                        <strong>Start Date:</strong>
-                        <input type="date">
-                        <strong>End Date:</strong>
-                        <input type="date">
-
+                        <div>
+                            <h3 class="mt-5"><strong>Dates</strong></h3>
+                            <p>
+                                <strong>Start Date:</strong>
+                                <input type="date">
+                                <strong>End Date:</strong>
+                                <input type="date">
+                            </p>
+                        </div>
+                        <div class="btn btn-sm btn-secondary">Confirm</div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+    {% include "footer.html" %}
 </main>
 {% endblock %}

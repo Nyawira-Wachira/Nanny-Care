@@ -45,3 +45,10 @@ class Company(models.Model):
     def update_company(self):
         name = self.name
         self.name = name
+        self.save()
+     # get all images
+
+    @classmethod
+    def get_all_images(cls):
+        images = Company.objects.all()
+        return images

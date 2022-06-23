@@ -1,6 +1,6 @@
 {% extends 'companydetails/base.html' %}
 {% load bootstrap4 %}
-
+{% load static %}
 {% block content %}
 <!DOCTYPE html>
 <html lang="en">
@@ -27,18 +27,34 @@
 </head>
 
 <body>
+    {% include 'navbar.html' %}
     <h3 class="text-center"><u><b> Nanny Care </b></u></h3>
     <p class="text-center">Do you need a nanny?</p>
     <P class="text-center">In a couple of minutes you can have one</P>
-    {{company.name}} company name <br>
-    {{company.description}} company description
-    {% for nanny in nannies %}
-    <!-- <img src="/static/img/nanny1.webp" class="card-img-top" alt="..."> -->
-    <div class="row">
-        <div class="col-lg-8 col-md-10 mx-auto">
+    <div class="company container">
+        <img src="{{company.image.url}}" alt="" class="img-fluid" style="height:100px; width:100px">
+        <p>
+            <strong>
+                Company Name : </strong> {{company.name}}
+        </p>
+
+
+        <p>
+            <strong>
+                No of Nannies : </strong> {{nannies|length}}
+        </p>
+
+
+    </div>
+
+    <div class="row d-flex mb-5">
+        {% for nanny in nannies %}
+        <!-- <img src="/static/img/nanny1.webp" class="card-img-top" alt="..."> -->
+
+        <div class="col-lg-4 col-md-4 mx-auto">
             <div class="card-body">
-                <img class="card-img-top" src="{{ nanny.profilepic.url }}" data-toggle="modal"
-                    data-target="#myModal{{nanny.id}}" style="height:150px;" />
+                <img class="card-img-top" src="{{ nanny.profile_pic.url }}" data-toggle="modal"
+                    data-target="#myModal{{nanny.id}}" style="height:150px; width:150px;" />
                 <p><strong>Name: </strong> {{nanny.name}}</p>
                 <p><strong>Age: </strong> {{nanny.age}}</p>
                 <p> <strong>Location: </strong> {{nanny.location}} </p>
@@ -46,18 +62,16 @@
                 <p> <strong>Available: </strong> {{nanny.availability}}</p>
                 <p> <strong>About: </strong> {{nanny.about}}</p>
                 <p> <strong>Skills: </strong> {{nanny.skills}}</p>
-                <p class="card-text">Hard working panctual and iteligent,Can multitask on various activities.</p>
-                <button class="btn btn-primary"><i></i><a href="{%url 'booking' nanny.name %}">Book</a></button>
+
+                <a class="btn btn-sm btn-secondary" href="{%url 'booking' nanny.name %}" id="bk-btn">Book</a>
                 <!-- <a href="#" class="btn btn-primary" style="margin-bottom:30px;">Book</a> -->
             </div>
-
         </div>
+
+        {% endfor %}
     </div>
 
-    {% endfor %}
-    </div>
-
-    <div class="container">
+    <div class="container " style="background:pink;font-size:17px;">
         <div class="row">
             <div class="col-lg-8 col-md-10 mx-auto">
                 <ul class="list-inline text-center">
@@ -72,8 +86,8 @@
                     <li class="list-inline-item">
                         <a href="https://www.pinterest.com/NannyCare/" target="_blank">
                             <span class="fa-stack fa-lg">
-                                <i class="fas fa-circle fa-stack-2x"></i>
-                                <i class="fab fa-pinterest fa-stack-1x fa-inverse"></i>
+                                <i class="fas fa-circle fa-stack-2x text-dark"></i>
+                                <i class="fab fa-pinterest fa-stack-1x fa-inverse text-primary"></i>
                             </span>
                         </a>
                     </li>

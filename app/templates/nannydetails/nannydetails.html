@@ -1,6 +1,5 @@
 {% extends 'nannydetails/base.html' %}
 {% load bootstrap4 %}
-
 {% block content %}
 {{block.super}}
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -22,10 +21,10 @@
 </form>
 
 
-<div class="d-flex">
-    {% for result in results %}
-    <div class="row nanny2">
-        <div class="col-lg-6 col-md-6 mx-auto border">
+<div class="container">
+    <div class="row nanny2 d-flex m-3">
+        {% for result in results %}
+        <div class="col-lg-4 col-md-4 mx-auto border p-3 ml-3 mr-3 card">
             <div class="card-body">
                 <img src="{{result.profile_pic.url}}" class=" card-img-top img-fluid" alt="{{nannies.name}}"
                     style="height: 250px; width: 350px;">
@@ -46,14 +45,16 @@
                 <button class="btn"><i class="fa fa-info-circle"></i> <a href="{% url 'booking' result.name %}">BOOK
                         SERVICE</a> </button>
 
+
+
             </div>
-
         </div>
+
+
+
+        {% endfor %}
+
     </div>
-
-
-
-    {% endfor %}
 </div>
 
 {% for nannies in nanny %}

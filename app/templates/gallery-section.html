@@ -1,33 +1,44 @@
-<div>
-  <section class="py-5 gallery-section container-fluid" id="gallery-section">
-    <h2 class="fw-bold text-center"><span class="text-primary">W</span>elcome to companies</h2>
-    <div class="row pt-4">
+{% extends 'registration/base.html' %}
+{% block content %}
+
+<div class="container-fluid" id="gallery-section">
+  <h2 class="fw-bold text-center"><span class="text-primary">Companies</span> we work with</h2>
+
+  <section class="d-flex py-5">
+    <div class="row">
       {% for company in companies %}
 
-      <div class="col-md-4 col-sm-6">
-        <div class="card">
-          <img class="card-img-top" src="{{ company.image.url }}" alt="{{ company.name }}">
-          <div class="card-body">
-            <h5 class="card-title">{{ company.name }}</h5>
-            <p class="card-text">{{ company.description }}</p>
-            <a href="{{ company.url }}" class="btn btn-primary">Visit</a>
+      <div class="col-md-4 col-lg-4 col-sm-12 card m-3">
+        <div class="card-body">
+          <img class="imageresize img-fluid" src="{{ company.image.url }}" alt="{{ company.name }}"
+            style="height:200px">
+          <div class="parag-style mt-4">
+            <h4 class="card-title">Company Name :<strong>{{ company.name }}</strong> </h4>
+            <h5 class="card-text">{{ company.description }}</h5>
+            <p class="card-text">{{ company.location }}</p>
+            <p class="card-text">{{ company.phone_number }}</p>
+            <p class="card-text">{{ company.email }}</p>
+          </div>
+          <div class="btns mt-3">
+            <a href="/nannies/" class="btn btn-sm" id="bk-btn">All Nannies</a>
+            <a href="/companydetails/{{company.name}}" class="btn btn-sm " id="bk-btn">Company Details</a>
+
           </div>
         </div>
-        <a href="/nannies/" class="btn btn-sm btn-dark">Nannies</a>
-        <a href="/companydetails/{{company.name}}" class="btn btn-sm btn-dark">Companies</a>
-
       </div>
-      {% endfor %}
 
-
-      {% for image in images %}
-      <div class="col-sm-6 col-xl-3 col-lg-4">
-        {% include 'image-card.html' %}
-      </div>
       {% endfor %}
-      {% if images.count == 0 %}
-      <p class="text-center pt-4">No images yet</p>
-      {% endif %}
     </div>
+
+
+    {% for image in images %}
+    <div class="col-sm-6 col-xl-3 col-lg-4">
+      {% include 'image-card.html' %}
+    </div>
+    {% endfor %}
+    {% if images.count == 0 %}
+    <p class="text-center pt-4">No images yet</p>
+    {% endif %}
   </section>
 </div>
+{% endblock %}

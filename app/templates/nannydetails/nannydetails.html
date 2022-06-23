@@ -14,10 +14,53 @@
 </script>
 <link href="/static/css/nannydetails.css" rel="stylesheet">
 
+
+<form action="{% url 'search' %}" method="POST" class="form">
+    {% csrf_token %}
+    <input type="text" name="name">
+    <input type="submit" name="submit" value="Nanny Search" class="btn">
+</form>
+
+
+<div class="d-flex">
+
+
+    {% for result in results %}
+
+    <div class="row nanny2">
+        <div class="col-lg-6 col-md-6 mx-auto">
+            <div class="card-body">
+                <img src="{{result.profile_pic.url}}" class="card-img-top img-fluid" alt="{{nannies.name}}"
+                    style="height: 250px; width: 350px;">
+                <h3> <strong>Name: </strong> </h3>
+                <h4>{{result.name}}</h4>
+                <h3><strong>Age:</strong> </h3>
+                <h4> {{result.age}}</h4>
+                <h3><strong>Location:</strong></h3>
+                <h4> {{result.location}} </h4>
+                <h3><strong>Available: </strong></h3>
+                <h4>{{result.availability}}</h4>
+                <h3><strong>About:</strong></h3>
+                <h4> {{result.about}}</h4>
+                <h3><strong>Skills:</strong></h3>
+                <h4>{{result.skills}}</h4>
+                <button class="btn"><i class="fa fa-info-circle"></i> <a href="/booking/">BOOK
+                        SERVICE</a> </button>
+
+            </div>
+
+        </div>
+    </div>
+
+
+
+    {% endfor %}
+</div>
+
 {% for nannies in nanny %}
 <div class="nanny1">
 
-    <div class="bio" style="margin-bottom:30px;">
+    <div style="margin-bottom:30px;">
         <div class="row">
             <div class="col-4">
 
@@ -30,30 +73,28 @@
                 <h1 style="margin-bottom:15px; text-align: justify;"><strong>{{nannies.name}}</strong> </h1>
 
                 <h5 style="margin-bottom:15px; text-align: justify;">NANNY RATING:</h5>
-                <span class="fa fa-star checked"></span>
-                <span class="fa fa-star checked"></span>
-                <span class="fa fa-star checked"></span>
-                <span class="fa fa-star checked"></span>
-                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked text-warning"></span>
+                <span class="fa fa-star checked text-warning"></span>
+                <span class="fa fa-star checked text-warning"></span>
+                <span class="fa fa-star checked text-warning"></span>
+                <span class="fa fa-star checked text-warning"></span>
             </div>
             <div class="col-4">
-                <h2 style="margin-bottom:15px; text-align: justify;"><strong>AVAILABILITY:
-                        {{nannies.availability}}</strong> </h2>
-                <h2 style="margin-bottom:15px; text-align: justify;"><strong>AGE: {{nannies.age}}</strong></h2>
-                <h2 style="margin-bottom:15px; text-align: justify;"><strong>RATES: {{nannies.rates}}</strong></h2>
-                <h2 style="margin-bottom:15px; text-align: justify;"><strong>LOCATION: {{nannies.location}}</strong>
+                <h2 style="margin-bottom:15px; text-align: justify;">AVAILABILITY:
+                    {{nannies.availability}}</h2>
+                <h2 style="margin-bottom:15px; text-align: justify;">AGE: {{nannies.age}}</h2>
+                <h2 style="margin-bottom:15px; text-align: justify;">RATES: {{nannies.rates}}</h2>
+                <h2 style="margin-bottom:15px; text-align: justify;">LOCATION: {{nannies.location}}
                 </h2>
-                <h2 style="margin-bottom:15px; text-align: justify;"><strong>EXPERIENCE:
-                        {{nannies.experience}}</strong></h2>
+                <h2 style="margin-bottom:15px; text-align: justify;">EXPERIENCE:
+                    {{nannies.experience}}</h2>
             </div>
         </div>
     </div>
     <!-- <hr style="height:2px; border-width:0; color:#BDE0FE; background-color:#BDE0FE; "> -->
     <div>
         <div class=" row">
-            <div class="col-4">
-                <h1>PROFILE DETAILS:</h1>
-            </div>
+
             <div class="col" class="about1">
                 <h1 style="padding-right: 10px;">ABOUT</h1>
                 <hr

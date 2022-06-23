@@ -1,13 +1,34 @@
-<section class="py-5 gallery-section container-fluid" id="gallery-section">
-  <h2 class="fw-bold text-center"><span class="text-primary">W</span>elcome to companies</h2>
+<section  id="gallery-section">
+  <h2  class="welcome-sty"> WELCOME TO NANNY COMPANIES</h2>
   <div class="row pt-4">
-      {% for image in images %}
-      <div class="col-sm-6 col-xl-3 col-lg-4">
-          {% include 'image-card.html' %}
+    {% for company in companies %}
+
+    <div class="cards-style">
+      <div class="parent-card">
+        <img class="imageresize" src="{{ company.image.url }}" alt="{{ company.name }}">
+        <div class="parag-style">
+          <h5 class="card-title">{{ company.name }}</h5>
+          <p class="card-text">{{ company.description }}</p>
+          <p class="card-text">{{ company.location }}</p>
+          <p class="card-text">{{ company.phone_number }}</p>
+          <p class="card-text">{{ company.email }}</p>
+
+          <button class="nannies-sty">
+            <a href="/nannies" class="">Nannies</a>
+          </button>
+        </div>
       </div>
-      {% endfor %}
-      {% if images.count == 0 %}
-      <p class="text-center pt-4">No images yet</p>
-      {% endif %}
+    </div>
+    {% endfor %}
+
+
+    {% for image in images %}
+    <div class="col-sm-6 col-xl-3 col-lg-4">
+      
+    </div>
+    {% endfor %}
+    {% if images.count == 0 %}
+    <p class="text-center pt-4">No images yet</p>
+    {% endif %}
   </div>
 </section>

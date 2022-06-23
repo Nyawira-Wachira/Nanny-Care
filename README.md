@@ -5,6 +5,7 @@
 ## Table of Content
 
 + [Description](#description)
++ [Design](#design)
 + [Requirements](#requirements)
 + [Installation](#installation)
 + [Running Project](#running-project)
@@ -15,6 +16,15 @@
 ## Description
 
 An application where parents/guardians can easily get nannies to take care of their kids.
+
+## Design
+
+- This project is created following this figma mock design. <a href="https://www.figma.com/file/wWIOHgD2GFwMi85vZZPqyJ/Nanny-Care?node-id=0%3A1">Design</a>
+
+
+[![nanny-care.png](https://i.postimg.cc/pL1SqTmG/nanny-care.png)](https://postimg.cc/gx840Gq8)
+
+[![nanny-care2.png](https://i.postimg.cc/7hxXx8CJ/nanny-care2.png)](https://postimg.cc/ph6KZSJP)
 
 ## Requirements
 

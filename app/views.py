@@ -5,19 +5,24 @@ from django.contrib.auth.decorators import login_required
 
 from django.http import HttpResponse
 
-from .models import User, Nanny, Bio, UserProfile
+from .models import User, Nanny, Bio, UserProfile, Company
 from .forms import UpdateProfileForm, UpdateUserForm
 
 # Create your views here.
 
 
 def Index(request):
+
     return render(request, 'index.html')
 
 
 @login_required(login_url='/accounts/login/')
 def home(request):
-    return render(request, 'home.html')
+    companies=Company.objects.all()
+    
+    context={"companies":companies}
+    
+    return render(request, 'home.html', context)
 
 
 @login_required(login_url='/accounts/login/')
@@ -60,8 +65,19 @@ def details(request):
     return render(request, 'nannydetails/nannydetails.html', {'nanny': nanny})
 
 
+def search_product(request):
+    """ search function  """
+    if request.method == "POST":
+        query_name = request.POST.get('name', None)
+        if query_name:
+            results = Nanny.objects.filter(name__contains=query_name)
+            return render(request, 'nannydetails/nannydetails.html', {"results": results})
+
+    return render(request, 'nannydetails/nannydetails.html')
+
+
 @login_required(login_url='/accounts/login/')
-def companydetails(request):
+def companydetails(request, company_name):
     gallery = Nanny.objects.all()[:8]
 
     return render(request, 'companydetails/company_detail.html', {'gallery': gallery})

@@ -1,0 +1,29 @@
+<section class="py-5 gallery-section container-fluid" id="gallery-section">
+  <h2 class="fw-bold text-center"><span class="text-primary">W</span>elcome to companies</h2>
+  <div class="row pt-4">
+    {% for company in companies %}
+
+    <div class="col-md-4 col-sm-6">
+      <div class="card">
+        <img class="card-img-top" src="{{ company.image.url }}" alt="{{ company.name }}">
+        <div class="card-body">
+          <h5 class="card-title">{{ company.name }}</h5>
+          <p class="card-text">{{ company.description }}</p>
+          <a href="{{ company.url }}" class="btn btn-primary">Visit</a>
+        </div>
+      </div>
+      <a href="/nannies" class="btn btn-sm btn-dark">Nannies</a>
+    </div>
+    {% endfor %}
+
+
+    {% for image in images %}
+    <div class="col-sm-6 col-xl-3 col-lg-4">
+      {% include 'image-card.html' %}
+    </div>
+    {% endfor %}
+    {% if images.count == 0 %}
+    <p class="text-center pt-4">No images yet</p>
+    {% endif %}
+  </div>
+</section>

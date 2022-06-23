@@ -20,9 +20,9 @@ def Index(request):
 def home(request):
     companies=Company.objects.all()
     
-    context={"companies":companies}
     
-    return render(request, 'home.html', context)
+    
+    return render(request, 'home.html', {"companies":companies})
 
 
 @login_required(login_url='/accounts/login/')

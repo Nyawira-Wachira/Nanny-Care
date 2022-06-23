@@ -9,7 +9,11 @@
   <title>Nanny-Care </title>
 
 
-
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous">
+  </script>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
   <link href="https://fonts.googleapis.com/css2?family=Oleo+Script+Swash+Caps&family=Satisfy&display=swap"
@@ -18,7 +22,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Teko&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Calistoga&family=Shrikhand&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
+  <link href="/static/css/home.css" rel="stylesheet">
 </head>
 
 <body>
@@ -30,6 +34,40 @@
       background-size: cover;
     }
     </style> -->
+
+
+  <nav class="navbar navbar-expand-lg" style="background-color: #FFC8DD;">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">NANNYCARE</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
+        aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavDropdown" style="padding-left:900px;">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">Home</a>
+          </li>
+
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
+              data-bs-toggle="dropdown" aria-expanded="false">
+              More details
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+              <li><a class="dropdown-item" href="#">Nannies</a></li>
+              <li><a class="dropdown-item" href="#">Company details</a></li>
+
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+
+  <!-- 
+
   <nav class="navbar navbar-expand-lg" id="nav" style="background:#FFC8DD;">
     <div class="container-fluid">
       <a class="navbar-brand" href="#">Nanny-Care</a>
@@ -38,18 +76,25 @@
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="topnav-right">
-        <a href="/accounts/login" style="margin-right:15px"><button type="button" class="btn btn-outline-info btn-sm">Login </button></a>
+        <a href="/accounts/login" style="margin-right:15px"><button type="button"
+            class="btn btn-outline-info btn-sm">Login </button></a>
         <a href="/accounts/register/"><button type="button" class="btn btn-outline-info btn-sm">Sign-Up</button></a>
       </div>
     </div>
-  </nav>
+  </nav> -->
+
+
+
+
+
   <div class="container">
     <div class="row">
       <div class="col-md-6 my-3">
         <h1 style="margin-top:50px;">NANNY CARE</h1>
         <h1>Stepping in, when you need to step out.</h3><br>
           <a href="{% url 'booking' %}"><button type="button" class="btn btn-outline-dark">Full time</button></a> or
-          <a href="{% url 'booking' %}"><button type="button" class="btn btn-outline-dark">Part time</button></a> Nanny Services
+          <a href="{% url 'booking' %}"><button type="button" class="btn btn-outline-dark">Part time</button></a> Nanny
+          Services
       </div>
       <div class="col-md-6 my-3">
         <img
@@ -59,11 +104,13 @@
       </div>
     </div><br>
     <div class="row mt-4">
-      <h1 align="center">About</h1><br><br>
+      <h1 style="align-items:center">About</h1><br><br>
       <div class="col-md-6 my-3">
         <img
           src="https://media.istockphoto.com/photos/african-mother-with-little-kid-son-play-with-wooden-blocks-picture-id1158481687?k=20&m=1158481687&s=612x612&w=0&h=vlJZC8vets2uoH3NgeHAkSOTpBGOdqLb33rjjXop5u8="
           class="img-fluid" alt="...">
+
+
       </div>
       <div class="col-md-6 my-3">
         <p style="margin-top:50px;">Nanny Care connects you with the help that you need.We source nannies from reputable
@@ -127,13 +174,80 @@
     </div>
 
   </div><br><br>
-  <footer style="background:#FFC8DD">
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-12 col-md-6">
+          <h6>About</h6>
+          <p class="text-justify">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed condimentum pharetra
+            vehicula. Nullam in odio mattis, vulputate elit vel, fringilla ex. Nam ut porta ex. Vestibulum ac lacinia
+            sem, ac lacinia eros. Suspendisse ut est vel nunc laoreet posuere nec sagittis nunc. Sed quis ultricies
+            turpis. Nullam vitae ligula at nisi suscipit vehicula. Maecenas luctus purus ut eros hendrerit ultricies nec
+            at orci. Aliquam erat volutpat. Phasellus euismod sollicitudin mauris, non accumsan diam auctor ut. Morbi eu
+            magna sit amet felis dignissim pulvinar quis interdum odio</p>
+        </div>
+
+        <div class="col-xs-6 col-md-3">
+          <h6>Categories</h6>
+          <ul class="footer-links">
+            <li><a href="http://scanfcode.com/category/front-end-development/">0-5 years</a></li>
+            <li><a href="http://scanfcode.com/category/back-end-development/">5-10years</a></li>
+            <li><a href="http://scanfcode.com/category/java-programming-language/">House sitting</a></li>
+            <li><a href="http://scanfcode.com/category/android/">House servicing</a></li>
+
+          </ul>
+        </div>
+
+        <div class="col-xs-6 col-md-3">
+          <h6>Quick Links</h6>
+          <ul class="footer-links">
+            <li><a href="/home/">HOME</a></li>
+            <li><a href="/nannies/">NANNY PAGE</a></li>
+            <li><a href="/companydetails/">COMPANY DETAILS</a></li>
+            <li><a href="/logout/">LOGIN/SIGNUP</a></li>
+
+          </ul>
+        </div>
+      </div>
+      <hr>
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-8 col-sm-6 col-xs-12">
+          <p class="copyright-text">Copyright &copy; 2022 All Rights Reserved by Nanny Care Group
+          </p>
+        </div>
+
+        <div class="col-md-4 col-sm-6 col-xs-12">
+          <ul class="social-icons">
+            <li><a class="facebook" href="#"><i class="fa fa-facebook"></i></a></li>
+            <li><a class="twitter" href="#"><i class="fa fa-twitter"></i></a></li>
+            <li><a class="dribbble" href="#"><i class="fa fa-dribbble"></i></a></li>
+            <li><a class="linkedin" href="#"><i class="fa fa-linkedin"></i></a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+
+
+
+  <!-- <footer style="background:#FFC8DD">
     <p>Email : Nannycare@gmail.com</p>
     <p>Contacts:0712345678</p>
     <font-awesome-icon icon="fa-brands fa-facebook" />
     <p align="center" style="margin-bottom:4px; font-family: Satisfy, cursive; font-size:25px;">Nannycare @2022</p>
   
-  </footer>
+  </footer> -->
+
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js"
+    integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk" crossorigin="anonymous">
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.min.js"
+    integrity="sha384-kjU+l4N0Yf4ZOJErLsIcvOU2qSb74wXpOhqTvwVx3OElZRweTnQ6d31fXEoRD1Jy" crossorigin="anonymous">
+  </script>
 
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
     integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous">

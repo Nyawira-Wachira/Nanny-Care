@@ -50,10 +50,18 @@ def profile(request, username):
 
 
 @login_required(login_url='/accounts/login/')
-def booking(request):
-    # selected_nanny = Nanny.objects.get(id=request.nanny_id)
-    selected_nanny = Nanny.objects.all()[0]
+def booking(request, username):
+    selected_nanny = Nanny.objects.get(name=username)
+    # selected_nanny = Nanny.objects.all()[0]
+    
+    def total_cost(nanny):
+        rate = Nanny.objects.get(name=username).rate
+        total = rate * nanny.hours
+        return total
+    
+    
     params = {'nanny': selected_nanny}
+    
 
     return render(request, 'book/booking.html', params)
 

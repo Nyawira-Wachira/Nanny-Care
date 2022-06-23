@@ -44,7 +44,7 @@
                 <h4> {{result.about}}</h4>
                 <h3><strong>Skills:</strong></h3>
                 <h4>{{result.skills}}</h4>
-                <button class="btn"><i class="fa fa-info-circle"></i> <a href="/booking/">BOOK
+                <button class="btn"><i class="fa fa-info-circle"></i> <a href="{% url 'booking' name %}">BOOK
                         SERVICE</a> </button>
 
             </div>
@@ -107,7 +107,7 @@
                 <hr
                     style=" margin-bottom:20px; height:2px; width: 25%; border-width:0; color:black; background-color:black">
                 <h3 style="padding-right: 10px;">{{nannies.skills}}</h3>
-                <button class="btn"><i class="fa fa-info-circle"></i> <a href="/booking/">BOOK
+                <button class="btn"><i class="fa fa-info-circle"></i> <a href="{% url 'booking' nannies.name %}">BOOK
                         SERVICE</a> </button>
             </div>
 

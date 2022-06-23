@@ -8,8 +8,9 @@ from django.http import HttpResponse
 from .models import User, Nanny, Bio, UserProfile
 
 # Create your views here.
-def Index(request):
 
+
+def Index(request):
 
     return render(request, 'index.html')
 
@@ -17,15 +18,15 @@ def Index(request):
 def home(request):
     return render(request, 'home.html')
 
+
 @login_required(login_url='/accounts/login/')
 def profile(request, username):
     user = get_object_or_404(User, username=username)
-    
+
     context = {
         'user': user
     }
     return render(request, 'profile/profile.html', context)
-
 
 
 @login_required(login_url='/accounts/login/')
@@ -36,10 +37,21 @@ def booking(request):
 def details(request):
 
     nanny = Nanny.objects.all()
-    return render(request, 'nannydetails/nannydetails.html', {'nanny':nanny})
+    return render(request, 'nannydetails/nannydetails.html', {'nanny': nanny})
+
+
+def search_product(request):
+    """ search function  """
+    if request.method == "POST":
+        query_name = request.POST.get('name', None)
+        if query_name:
+            results = Nanny.objects.filter(name__contains=query_name)
+            return render(request, 'nannydetails/nannydetails.html', {"results": results})
+
+    return render(request, 'nannydetails/nannydetails.html')
 
 
 def companydetails(request):
-    gallery = Nanny.objects.all() [:8]
+    gallery = Nanny.objects.all()[:8]
 
-    return render (request, 'companydetails/company_detail.html',{'gallery':gallery})
+    return render(request, 'companydetails/company_detail.html', {'gallery': gallery})

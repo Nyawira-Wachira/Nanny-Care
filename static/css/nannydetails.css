@@ -2,7 +2,7 @@ body {
     /* background-color: #f9f3f5; */
 
     font-family: 'Poppins', sans-serif;
-    font-weight: bolder;
+
 }
 
 h1 {
@@ -25,9 +25,7 @@ h5 {
     font-size: 15px;
 }
 
-.bio {
-    color: #FFAFCC;
-}
+
 
 .btn {
     background-color: #BDE0FE;
@@ -46,14 +44,21 @@ a {
     margin-bottom: 50px;
     margin-left: 100px;
     margin-right: 100px;
-    border: 1px solid black;
     border-radius: 5px;
-    box-shadow: 2px 2px 2px 2px #BDE0FE;
+    box-shadow: 1px 1px 1px 1px black;
     padding-top: 30px;
     padding-bottom: 30px;
     padding-left: 30px;
     padding-right: 30px;
 
+}
+
+.nanny2 {
+    padding-top: 30px;
+}
+
+.form {
+    padding-left: 780px;
 }
 
 .about1 {

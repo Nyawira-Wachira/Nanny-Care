@@ -1,12 +1,15 @@
 from django.contrib.auth.models import User
 from django.db import models
 
+from cloudinary.models import CloudinaryField
+
+
 
 class Company(models.Model):
     name = models.CharField(max_length=255)
     description = models.TextField()
     location = models.CharField(max_length=255)
-    image = models.ImageField(upload_to='images/')
+    image = CloudinaryField('images')
     phone_number = models.IntegerField(null=True, blank=True)
     email = models.EmailField(max_length=254)
 
@@ -40,7 +43,7 @@ class Company(models.Model):
 class UserProfile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     bio = models.CharField(max_length=500, blank=True)
-    profile_pic = models.ImageField(upload_to='profile/', blank=True)
+    profile_pic = CloudinaryField('profile', blank=True)
     # created = models.DateTimeField(auto_now_add=True)
 
     # def __str__(self):
@@ -50,8 +53,7 @@ class UserProfile(models.Model):
 
 
 class Nanny(models.Model):
-    profile_pic = models.ImageField(
-        upload_to='profilepic/', default='default.jpeg')
+    profile_pic = CloudinaryField('profilepic')
     name = models.CharField(max_length=50, blank=True)
     experience = models.CharField(max_length=50, blank=True)
     rates = models.IntegerField(blank=True)

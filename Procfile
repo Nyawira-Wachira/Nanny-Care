@@ -1,1 +1,0 @@
-web: gunicorn nanny_care.wsgi
